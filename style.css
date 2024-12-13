@@ -143,6 +143,7 @@ body {
                           height: 12vh;
                           margin-top: 0.5vh;
                           justify-self: center;
+                          background-size: cover;
                         }
 
                     .todayAgenda {

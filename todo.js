@@ -111,6 +111,7 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Photo | BOTTOM |Width 100% - Height 80%
                         const userPhoto = document.createElement('div');
                         userPhoto.setAttribute('class', 'userPhoto');
+                        userPhoto.style.backgroundImage = "url('./images/PersonalPhoto.jpeg')";
                         greetingContainer.appendChild(userPhoto);
 
 
