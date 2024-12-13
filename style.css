@@ -74,7 +74,7 @@ body {
                   cursor: pointer;
                   color: rgb(0, 132, 255);
                   font-family: Arial, Helvetica, sans-serif ;
-                  font-size: 25px;
+                  font-size: 18px;
                   margin: 5px;
                   text-align: left;
                   padding-left:55px;
@@ -110,8 +110,6 @@ body {
 
         .mainRightTop {
           display: flex;
-
-
           width: 100%;
           height: 51.6%;
         }
@@ -124,6 +122,12 @@ body {
                 height: 100%;                
               }
 
+                    .greetingContainer {
+                      border: solid red 1px;
+                      height: 45%;
+                      width: 100%;
+                    }
+
 
               .meetingSchedule {
                 border: Solid rgb(212, 210, 210) 1px;
@@ -131,7 +135,6 @@ body {
                 width: 45%;
                 height: 100%;
                 margin-left: 1vw;                
-
               }
 
         .mainRightBottom {

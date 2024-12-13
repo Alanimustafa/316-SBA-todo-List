@@ -99,8 +99,8 @@ todoBody.setAttribute('class','todoBody');
                   // Todo Operation | Container 1 | TOP | Greeting and Scheduel | The Agenda | TOP Picture | Width: 100% - Height: 40% | Has (2) Containers | Greeting Message and Photo
                   const greetingContainer = document.createElement('div');
                   greetingContainer.setAttribute('class', 'greetingContainer');
-                  mainRightTop.appendChild(greetingContainer);
-                  
+                  greetScheduleMain.appendChild(greetingContainer);
+
                         // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Greeting Message | TOP |Width 100% - Height 20%
 
                         // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Photo | BOTTOM |Width 100% - Height 80%
