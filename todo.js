@@ -129,7 +129,7 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda contents| Width: 100% - Height: 90%
                         const agendaContents = document.createElement('div');
                         agendaContents.setAttribute('class', 'agendaContents');
-                        agendaContents.textContent = "Your agenda today:";
+                        agendaContents.textContent = "The agenda contents";
                         todayAgenda.appendChild(agendaContents);
 
 

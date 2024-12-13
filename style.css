@@ -167,6 +167,14 @@ body {
                             color: #333f3c;
                           }
 
+                          .agendaContents {
+                            border: solid orange 1px;
+                            height: 15vh;
+                            font-family: Arial, Helvetica, sans-serif;
+                            font-size: 18px;
+                            margin-top: 5px;
+                          }
+
 
               .meetingSchedule {
                 border: Solid rgb(212, 210, 210) 1px;
