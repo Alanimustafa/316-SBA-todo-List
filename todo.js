@@ -49,15 +49,15 @@ todoBody.setAttribute('class','todoBody');
 
     
             // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Width: 100% - Height: 50% | Has (2) Containers | LEFT: The Agenda | RIGHT: Schedule 
-            // const mainRightTop = document.createElement('div');
-            // mainRightTop.setAttribute('class', "mainRightTop");
-            // todoMainRight.appendChild(mainRightTop);
+            const mainRightTop = document.createElement('div');
+            mainRightTop.setAttribute('class', "mainRightTop");
+            todoMainRight.appendChild(mainRightTop);
 
 
               // Todo Operation | Container 1 | LEFT | Greeting and Scheduel | The Agenda | Width: 60% - Height: 100% | Has (2) Containers | TOP - Picture | BOTTOM: Today Agenda
-              // const greetScheduleMain = document.createElement('div');
-              // greetScheduleMain.setAttribute('class', 'greetScheduleMain');
-              // mainRightTop.appendChild(greetScheduleMain);
+              const greetScheduleMain = document.createElement('div');
+              greetScheduleMain.setAttribute('class', 'greetScheduleMain');
+              mainRightTop.appendChild(greetScheduleMain);
 
                   // Todo Operation | Container 1 | TOP | Greeting and Scheduel | The Agenda | TOP Picture | Width: 100% - Height: 40%
 
