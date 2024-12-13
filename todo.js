@@ -106,6 +106,9 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Photo | BOTTOM |Width 100% - Height 80%
 
                   // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda | Width: 100% - Height: 60%
+                  const todayAgenda = document.createElement('div');
+                  todayAgenda.setAttribute('class', 'todayAgenda');
+                  greetScheduleMain.appendChild(todayAgenda);
 
                       
 
