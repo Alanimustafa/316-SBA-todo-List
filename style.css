@@ -53,10 +53,26 @@ body {
     }
 
           .homeButtonsTopLeft {
+            display: flex;
             border: solid red 2px;
-            width: 100% ;
+            width: 92% ;
             height: 85%;
+            padding: 10px;
+            justify-content: center;
           }
+
+                .homeButton {
+                  width: 10vw;
+                  height: 5vh;
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                  color: rgb(0, 132, 255);
+                  font-family: Arial, Helvetica, sans-serif ;
+                  font-size: 30px;
+                  border: solid rgb(0, 132, 255) 1px;
+                  margin: 5px;
+                }
 
           .myAccount {
             border: solid red 2px;
