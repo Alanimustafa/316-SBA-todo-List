@@ -123,6 +123,7 @@ body {
               }
 
                     .greetingContainer {
+                      display: block;
                       border: solid red 1px;
                       height: 45%;
                       width: 100%;
@@ -132,7 +133,16 @@ body {
                           font-family: Arial, Helvetica, sans-serif;
                           font-size: 18px;
                           text-align: center;
-                          margin-top: 5px;;
+                          margin-top: 1vh;;
+                        }
+
+                        .userPhoto {
+                          border: double gray 4px;
+                          border-radius: 100px;
+                          width: 6vw;
+                          height: 12vh;
+                          margin-top: 0.5vh;
+                          justify-self: center;
                         }
 
                     .todayAgenda {
