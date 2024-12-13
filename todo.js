@@ -16,6 +16,9 @@ todoBody.setAttribute('class','todoBody');
     todoHeader.textContent = "SBA Todo List";
 
     // Todo Buttons | LEFT | Width: 25% - Height: 100% | Has (3) Containers | TOP: Buttons | CENTER: Todo Form | BOTTOM: Copyrights and Contact us
+    const buttonsMainLeft = document.createElement('div');
+    buttonsMainLeft.setAttribute('class', "buttonMainLeft");
+    todoMainContainer.appendChild(buttonsMainLeft);
 
 
       // Todo Buttons | TOP | Buttons |  Width: 100% - Height: 80% | Has (3) Buttons | LEFT: New Todo | CENTER: Show Calendar | RIGHT: Settings
