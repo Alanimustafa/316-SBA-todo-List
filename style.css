@@ -54,10 +54,11 @@ body {
 
           .homeButtonsTopLeft {
             display: block;
-            border: solid red 2px;
+            /* border: solid red 2px; */
             width: 92% ;
-            height: 85%;
+            height: 80%;
             padding: 10px;
+            padding-top: 35px;
             justify-content: center;
           }
 
@@ -74,15 +75,17 @@ body {
                   font-family: Arial, Helvetica, sans-serif ;
                   font-size: 25px;
                   margin: 5px;
+                  text-align: left;
+                  padding-left:55px;
                 }
 
                 .allButtonsHover:hover {
                   background-color: rgb(230, 241, 252);
-                  border-radius: 10px;;
+                  border-radius: 5px;;
                 }
 
 
-          .myAccount {
+          .myAccountContainer {
             border: solid red 2px;
             width: 100% ;
             height: 10%;

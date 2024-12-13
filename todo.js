@@ -62,10 +62,17 @@ todoBody.setAttribute('class','todoBody');
                     homeButtonsTopLeft.appendChild(homeWhiteboardButton);
 
 
-              // Todo Buttons | BOTTOM | My Account |  Width: 100% - Height: 200%
-              const myAccount = document.createElement('div');
-              myAccount.setAttribute('class', "myAccount")
-              buttonsMainLeft.appendChild(myAccount);
+              // Todo Buttons | BOTTOM | My Account |  Width: 100% - Height: 20%
+              const myAccountContainer = document.createElement('div');
+              myAccountContainer.setAttribute('class', "myAccountContainer")
+              buttonsMainLeft.appendChild(myAccountContainer);
+
+                    // Todo Buttons | Button | My Account | Width 100% - Height: 50%
+                    const myAccountButton = document.createElement ('button');
+                    myAccountButton.setAttribute('class', 'myAccountButton');
+                    myAccountButton.classList.add('allButtonsHover');
+                    myAccountButton.textContent= "Whiteboard";
+                    homeButtonsTopLeft.appendChild(myAccountButton);
 
             
 
