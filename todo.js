@@ -28,18 +28,21 @@ todoBody.setAttribute('class','todoBody');
           todoMainBottom.appendChild(buttonsMainLeft);
 
 
-            // Todo Buttons | TOP | Buttons |  Width: 100% - Height: 80% | Has (3) Buttons | LEFT: New Todo | CENTER: Show Calendar | RIGHT: Settings
-            const homeButtonsTopLeft = document.createElement('div');
-            homeButtonsTopLeft.setAttribute('class', "homeButtonsTopLeft")
-            buttonsMainLeft.appendChild(homeButtonsTopLeft);
-            
-                  // Todo Operation | Buttons | 1 | Home | Width: 80% - Height: 90%
-                  // Todo Operation | Buttons | 2 | Calendar |Width: 80% - Height: 90%
-                  // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
-                  // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
+              // Todo Buttons | TOP | Buttons |  Width: 100% - Height: 80% | Has (3) Buttons | LEFT: New Todo | CENTER: Show Calendar | RIGHT: Settings
+              const homeButtonsTopLeft = document.createElement('div');
+              homeButtonsTopLeft.setAttribute('class', "homeButtonsTopLeft")
+              buttonsMainLeft.appendChild(homeButtonsTopLeft);
+              
+                    // Todo Operation | Buttons | 1 | Home | Width: 80% - Height: 90%
+                    // Todo Operation | Buttons | 2 | Calendar |Width: 80% - Height: 90%
+                    // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
+                    // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
 
 
-            // Todo Buttons | BOTTOM | Sign OUT |  Width: 100% - Height: 200%
+              // Todo Buttons | BOTTOM | My Account |  Width: 100% - Height: 200%
+              const myAccount = document.createElement('div');
+              myAccount.setAttribute('class', "myAccount")
+              buttonsMainLeft.appendChild(myAccount);
 
             
 
