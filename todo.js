@@ -140,6 +140,17 @@ todoBody.setAttribute('class','todoBody');
               meetingSchedule.setAttribute('class', 'meetingSchedule');
               mainRightTop.appendChild(meetingSchedule);
 
+                    // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | TOP: Start A Meeting
+                    const startMeetingButton = document.createElement ('button');
+                    startMeetingButton.setAttribute('class', 'startMeetingButton');
+                    startMeetingButton.classList.add('allButtonsHover');
+                    startMeetingButton.textContent= "Start a meeting";
+                    meetingSchedule.appendChild(startMeetingButton);
+
+                    // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | CENTER: Join A Meeting
+
+                    // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | BOTTOM: Schedule A Meeting
+
 
 
 
