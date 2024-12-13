@@ -55,6 +55,11 @@ todoBody.setAttribute('class','todoBody');
                     homeButtonsTopLeft.appendChild(homeContactsButton);
 
                     // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
+                    const homeWhiteboardButton = document.createElement ('button');
+                    homeWhiteboardButton.setAttribute('class', 'homeWhiteboardButton');
+                    homeWhiteboardButton.classList.add('allButtonsHover');
+                    homeWhiteboardButton.textContent= "Contacts";
+                    homeButtonsTopLeft.appendChild(homeWhiteboardButton);
 
 
               // Todo Buttons | BOTTOM | My Account |  Width: 100% - Height: 200%
