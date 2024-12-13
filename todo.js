@@ -58,7 +58,7 @@ todoBody.setAttribute('class','todoBody');
                     const homeWhiteboardButton = document.createElement ('button');
                     homeWhiteboardButton.setAttribute('class', 'homeWhiteboardButton');
                     homeWhiteboardButton.classList.add('allButtonsHover');
-                    homeWhiteboardButton.textContent= "Contacts";
+                    homeWhiteboardButton.textContent= "Whiteboard";
                     homeButtonsTopLeft.appendChild(homeWhiteboardButton);
 
 

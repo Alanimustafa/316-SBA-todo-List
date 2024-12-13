@@ -61,32 +61,10 @@ body {
             justify-content: center;
           }
 
-                .homeButton {
-                  width: 14vw;
-                  height: 5vh;
-                  background: none;
-                  border: none;
-                  cursor: pointer;
-                  color: rgb(0, 132, 255);
-                  font-family: Arial, Helvetica, sans-serif ;
-                  font-size: 25px;
-                  
-                  margin: 5px;
-                }
-
-                .homeCalendarButton {
-                  width: 14vw;
-                  height: 5vh;
-                  background: none;
-                  border: none;
-                  cursor: pointer;
-                  color: rgb(0, 132, 255);
-                  font-family: Arial, Helvetica, sans-serif ;
-                  font-size: 25px;
-                  margin: 5px;
-                }
-
-                .homeContactsButton {
+                .homeButton,
+                .homeCalendarButton,
+                .homeContactsButton,
+                .homeWhiteboardButton {
                   width: 14vw;
                   height: 5vh;
                   background: none;
