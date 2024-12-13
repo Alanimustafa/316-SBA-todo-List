@@ -72,7 +72,6 @@ body {
 
 
               .greetScheduleMain {
-                border: solid orange 2px;
                 border: Solid rgb(212, 210, 210) 1px;
                 background-color: rgb(255, 255, 255);                
                 width: 55%;
@@ -81,7 +80,6 @@ body {
 
 
               .meetingSchedule {
-                border: solid orange 2px;
                 border: Solid rgb(212, 210, 210) 1px;
                 background-color: rgb(255, 255, 255);                
                 width: 45%;
@@ -91,11 +89,16 @@ body {
               }
 
         .mainRightBottom {
-          border: solid orange 2px;
-          border: Solid rgb(212, 210, 210) 1px;
-          background-color: rgb(255, 255, 255);
+
           border-radius: 0px 0px 40px 0px;;    
-          width: 100%;
+          width: 99.8%;
           height: 45%;
-          margin-top: 2.2vh;
+          margin-top: 2.4vh;
         }
+
+            .theCalendar {
+              border: Solid rgb(212, 210, 210) 1px;
+              background-color: rgb(255, 255, 255);
+              width: 40%;
+              height: 100%;
+            }
