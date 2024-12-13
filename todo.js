@@ -71,8 +71,9 @@ todoBody.setAttribute('class','todoBody');
                     const myAccountButton = document.createElement ('button');
                     myAccountButton.setAttribute('class', 'myAccountButton');
                     myAccountButton.classList.add('allButtonsHover');
-                    myAccountButton.textContent= "Whiteboard";
-                    homeButtonsTopLeft.appendChild(myAccountButton);
+                    myAccountButton.textContent= "My account";
+                    myAccountButton.style.color= "darkRed";
+                    myAccountContainer.appendChild(myAccountButton);
 
             
 
