@@ -89,8 +89,8 @@ body {
               }
 
         .mainRightBottom {
-
-          border-radius: 0px 0px 40px 0px;;    
+          display: flex;
+          border-radius: 0px 0px 40px 0px;    
           width: 99.8%;
           height: 45%;
           margin-top: 2.4vh;
@@ -101,4 +101,13 @@ body {
               background-color: rgb(255, 255, 255);
               width: 40%;
               height: 100%;
+            }
+
+            .toDoList {
+              border-radius: 0px 0px 40px 0px;;
+              border: Solid rgb(212, 210, 210) 1px;
+              background-color: rgb(255, 255, 255);
+              width: 60%;
+              height: 100%;    
+              margin-left: 1vw;          
             }
