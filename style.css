@@ -62,7 +62,7 @@ body {
           }
 
                 .homeButton {
-                  width: 10vw;
+                  width: 20vw;
                   height: 5vh;
                   background: none;
                   border: none;
@@ -70,9 +70,14 @@ body {
                   color: rgb(0, 132, 255);
                   font-family: Arial, Helvetica, sans-serif ;
                   font-size: 30px;
-                  border: solid rgb(0, 132, 255) 1px;
+                  
                   margin: 5px;
                 }
+
+                .allButtonsHover:hover {
+                  background-color: rgb(230, 241, 252);
+                }
+
 
           .myAccount {
             border: solid red 2px;

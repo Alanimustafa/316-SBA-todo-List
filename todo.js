@@ -36,6 +36,7 @@ todoBody.setAttribute('class','todoBody');
                     // Todo Operation | Buttons | 1 | Home | Width: 80% - Height: 90%
                     const homeButton = document.createElement ('button');
                     homeButton.setAttribute('class', 'homeButton');
+                    homeButton.classList.add('allButtonsHover');
                     homeButton.textContent= "Home";
                     homeButtonsTopLeft.appendChild(homeButton);
 
