@@ -128,6 +128,13 @@ body {
                       width: 100%;
                     }
 
+                    .todayAgenda {
+                      border: solid red 1px;
+                      height: 51%;
+                      margin-top: 4px;;
+                      width: 100%;
+                    }
+
 
               .meetingSchedule {
                 border: Solid rgb(212, 210, 210) 1px;
