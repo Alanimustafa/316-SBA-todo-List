@@ -120,6 +120,15 @@ todoBody.setAttribute('class','todoBody');
                   todayAgenda.setAttribute('class', 'todayAgenda');
                   greetScheduleMain.appendChild(todayAgenda);
 
+                        // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda Text| Width: 100% - Height: 10%
+                        const theAgendaText = document.createElement('div');
+                        theAgendaText.setAttribute('class', 'theAgendaText');
+                        theAgendaText.textContent = "Your agenda today:";
+                        todayAgenda.appendChild(theAgendaText);
+
+                        // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda contents| Width: 100% - Height: 90%
+
+
                       
 
               // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | Width: 40% - Height: 100% | Has (3) Buttons | TOP: Start A Meeting | CENTER: Join A Meeting | BOTTOM: Schedule A Meeting
