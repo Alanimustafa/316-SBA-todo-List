@@ -184,7 +184,8 @@ body {
                 margin-left: 1vw;                
               }
 
-                    .startMeetingButton {
+                    .startMeetingButton,
+                    .joinMeetingButton {
                       width: 100%;
                       height: 30%;
                       background: none;

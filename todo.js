@@ -151,11 +151,16 @@ todoBody.setAttribute('class','todoBody');
                     const joinMeetingButton = document.createElement ('button');
                     joinMeetingButton.setAttribute('class', 'joinMeetingButton');
                     joinMeetingButton.classList.add('allButtonsHover');
-                    joinMeetingButton.textContent= "Start a meeting";
+                    joinMeetingButton.textContent= "Join a meeting";
                     meetingSchedule.appendChild(joinMeetingButton);
 
 
                     // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | BOTTOM: Schedule A Meeting
+                    const scheduleMeetingButton = document.createElement ('button');
+                    scheduleMeetingButton.setAttribute('class', 'scheduleMeetingButton');
+                    scheduleMeetingButton.classList.add('allButtonsHover');
+                    scheduleMeetingButton.textContent= "Schedule a meeting";
+                    meetingSchedule.appendChild(scheduleMeetingButton);
 
 
 
