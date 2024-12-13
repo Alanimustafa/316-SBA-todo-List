@@ -10,6 +10,10 @@ todoBody.setAttribute('class','todoBody');
   
 
     // The Header | TOP | Width 100% - Height 10% 
+    const todoHeader = document.createElement('div');
+    todoHeader.setAttribute('class', 'todoHeader');
+    todoMainContainer.appendChild(todoHeader);
+    todoHeader.textContent = "SBA Todo List";
 
     // Todo Buttons | LEFT | Width: 25% - Height: 100% | Has (3) Containers | TOP: Buttons | CENTER: Todo Form | BOTTOM: Copyrights and Contact us
 
