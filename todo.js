@@ -104,7 +104,7 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Greeting Message | TOP |Width 100% - Height 20%
                         const greetingMessage = document.createElement('div');
                         greetingMessage.setAttribute('class', 'greetingMessage');
-                        greetingMessage.textContent = "Hello Per Scholas! "
+                        greetingMessage.textContent = "Hello Per Scholas!";
                         greetingContainer.appendChild(greetingMessage);
       
 
