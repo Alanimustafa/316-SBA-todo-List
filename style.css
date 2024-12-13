@@ -42,7 +42,7 @@ body {
 }
 
     .buttonMainLeft {
-      display: flex;
+      display: block;
       border: Solid rgb(212, 210, 210) 1px;
       background-color: rgb(255, 255, 255);
       margin-left: 1vw;
@@ -50,13 +50,18 @@ body {
       border-radius: 0px 0px 0px 40px;
       width: 16vw;
       height: 73vh;
-      justify-content: center;
     }
 
           .homeButtonsTopLeft {
             border: solid red 2px;
-            width: 95% ;
-            height: 80%;
+            width: 100% ;
+            height: 85%;
+          }
+
+          .myAccount {
+            border: solid red 2px;
+            width: 100% ;
+            height: 10%;
           }
 
     .todoMainRight {
