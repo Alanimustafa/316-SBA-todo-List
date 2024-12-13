@@ -29,7 +29,10 @@ todoBody.setAttribute('class','todoBody');
 
 
             // Todo Buttons | TOP | Buttons |  Width: 100% - Height: 80% | Has (3) Buttons | LEFT: New Todo | CENTER: Show Calendar | RIGHT: Settings
-                  
+            const homeButtonsTopLeft = document.createElement('div');
+            homeButtonsTopLeft.setAttribute('class', "homeButtonsTopLeft")
+            buttonsMainLeft.appendChild(homeButtonsTopLeft);
+            
                   // Todo Operation | Buttons | 1 | Home | Width: 80% - Height: 90%
                   // Todo Operation | Buttons | 2 | Calendar |Width: 80% - Height: 90%
                   // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
