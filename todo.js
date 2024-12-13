@@ -48,6 +48,12 @@ todoBody.setAttribute('class','todoBody');
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
 
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
+                    const homeContactsButton = document.createElement ('button');
+                    homeContactsButton.setAttribute('class', 'homeContactsButton');
+                    homeContactsButton.classList.add('allButtonsHover');
+                    homeContactsButton.textContent= "Contacts";
+                    homeButtonsTopLeft.appendChild(homeContactsButton);
+
                     // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
 
 
