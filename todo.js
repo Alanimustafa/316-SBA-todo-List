@@ -81,5 +81,8 @@ todoBody.setAttribute('class','todoBody');
 
 
                 // Todo operation | Container 2 | Calendar and Invitations | LEFT | Calendar | Width: 40% - Height: 100%
+                const theCalendar = document.createElement('div');
+                theCalendar.setAttribute('class', "theCalendar");
+                mainRightBottom.appendChild(theCalendar);
 
                 // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | Width: 60% - Height: 100%
