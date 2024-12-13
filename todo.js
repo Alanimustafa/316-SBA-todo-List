@@ -34,6 +34,11 @@ todoBody.setAttribute('class','todoBody');
               buttonsMainLeft.appendChild(homeButtonsTopLeft);
               
                     // Todo Operation | Buttons | 1 | Home | Width: 80% - Height: 90%
+                    const homeButton = document.createElement ('button');
+                    homeButton.setAttribute('class', 'homeButton');
+                    homeButton.textContent = "Home";
+                    homeButtonsTopLeft.appendChild(homeButton);
+
                     // Todo Operation | Buttons | 2 | Calendar |Width: 80% - Height: 90%
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
                     // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
