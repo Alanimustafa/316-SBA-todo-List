@@ -79,24 +79,31 @@ todoBody.setAttribute('class','todoBody');
 
 
 
-          // Todo Main Operation | RIGHT | Width: 75% - Height: 100% | Has (2) Sub Containers | TOP: Greetings and Schedule | BOTTOM: Calendar and Invitations
+          // DONE -Todo Main Operation | RIGHT | Width: 75% - Height: 100% | Has (2) Sub Containers | TOP: Greetings and Schedule | BOTTOM: Calendar and Invitations
           const todoMainRight = document.createElement('div');
           todoMainRight.setAttribute('class', "todoMainRight");
           todoMainBottom.appendChild(todoMainRight);
 
     
-            // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Width: 100% - Height: 50% | Has (2) Containers | LEFT: The Agenda | RIGHT: Schedule 
+            // DONE - Todo Operation | Container 1 | TOP | Greeting and Scheduel | Width: 100% - Height: 50% | Has (2) Containers | LEFT: The Agenda | RIGHT: Schedule 
             const mainRightTop = document.createElement('div');
             mainRightTop.setAttribute('class', "mainRightTop");
             todoMainRight.appendChild(mainRightTop);
 
 
-              // Todo Operation | Container 1 | LEFT | Greeting and Scheduel | The Agenda | Width: 60% - Height: 100% | Has (2) Containers | TOP - Picture | BOTTOM: Today Agenda
+              // DONE -Todo Operation | Container 1 | LEFT | Greeting and Scheduel | The Agenda | Width: 60% - Height: 100% | Has (2) Containers | TOP - Picture | BOTTOM: Today Agenda
               const greetScheduleMain = document.createElement('div');
               greetScheduleMain.setAttribute('class', 'greetScheduleMain');
               mainRightTop.appendChild(greetScheduleMain);
 
-                  // Todo Operation | Container 1 | TOP | Greeting and Scheduel | The Agenda | TOP Picture | Width: 100% - Height: 40%
+                  // Todo Operation | Container 1 | TOP | Greeting and Scheduel | The Agenda | TOP Picture | Width: 100% - Height: 40% | Has (2) Containers | Greeting Message and Photo
+                  const greetingContainer = document.createElement('div');
+                  greetingContainer.setAttribute('class', 'greetingContainer');
+                  mainRightTop.appendChild(greetingContainer);
+                  
+                        // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Greeting Message | TOP |Width 100% - Height 20%
+
+                        // Todo Operation | Container 1 | TOP | Greeting and Scheduel | Photo | BOTTOM |Width 100% - Height 80%
 
                   // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda | Width: 100% - Height: 60%
 
