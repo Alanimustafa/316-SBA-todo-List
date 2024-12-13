@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin: 0; 
+  background-image: linear-gradient(lightblue, rgb(64, 64, 185));
+}
+
+
+.todo-Main-Container {
+  border: solid black 1px;
+  border-radius: 50px;
+  width: 70vw;;
+  height: 85vh;
+  background-color: rgb(238, 238, 238);
+
+}
+
+.todoHeader {
+  display: flex;
+  width: 98.60%;
+  height: 10%;
+  background-color: rgb(59, 121, 255);
+  border-radius: 50px 50px 0px 0px;
+  align-items:center;
+  padding-left: 1vw;
+  color: white;
+  font-size: 25px;
+  text-shadow: black 5px 5px 5px;
+}

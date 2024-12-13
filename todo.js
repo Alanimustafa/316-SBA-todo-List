@@ -1,7 +1,13 @@
 // ToDo (body) | Has one main container 
-
+const todoBody = document.querySelector('body');
+todoBody.setAttribute('class','todoBody');
 
   // Todo Main Container | Width 80% - Height 80% | Has (2) Containers | LEFT: Todo Form | RIGHT: Todo List
+
+  const todoMainContainer = document.createElement('div');
+  todoMainContainer.setAttribute('class', 'todo-Main-Container');
+  todoBody.appendChild(todoMainContainer);
+  
 
     // The Header | TOP | Width 100% - Height 10% 
 
