@@ -384,6 +384,7 @@ function scheduleAmeeting () {
                           console.log("Selected Time:", event.target.value);
                         });
 
+
                         // Form Fields | Meet with Person Name
                         const meetingFormPersonName = document.createElement('input');
                         meetingFormPersonName.setAttribute('class', 'meetingFormPersonName');
@@ -396,6 +397,7 @@ function scheduleAmeeting () {
                           const meetingPersonNameValue = event.target.value;
                           console.log("Person Name:", event.target.value);
                         });
+
 
                         // Form Fields | Person Phone Number
                         const meetingFormPersonPhone = document.createElement('input');
@@ -417,6 +419,7 @@ function scheduleAmeeting () {
                           }
                         });
 
+
                         // Form Fields | Person Email
                         const meetingFormPersonEmail = document.createElement('input');
                         meetingFormPersonEmail.setAttribute('class', 'meetingFormPersonEmail');
@@ -435,6 +438,8 @@ function scheduleAmeeting () {
                                 alert("invalid Email Address");
                               }
                         });
+
+
                         // Form Fields | Meeting Subject
                         const meetingFormMeetingSubject = document.createElement('input');
                         meetingFormMeetingSubject.setAttribute('class', 'meetingFormMeetingSubject');
@@ -444,6 +449,32 @@ function scheduleAmeeting () {
                         scheduleFormFieldtForms.appendChild(meetingFormMeetingSubject);
 
                         // Form Fields | Text Reminder
+                        const meetingFormTextReminder = document.createElement('input');
+                        meetingFormTextReminder.setAttribute('class', 'meetingFormTextReminder');
+                        meetingFormTextReminder.setAttribute("type", "checkbox");
+                        
+                        meetingFormTextReminder.addEventListener("change", (event) => {
+                          
+                          const textReminderEvent = event.target;
+
+                          if (meetingFormTextReminder.checked) { 
+                            prompt ("Please enter a phone number");
+                          } else {
+                            alert ("Text reminder has been cancelled");
+                          }
+                        })
+
+                            // Label text
+                            const reminderLabel = document.createElement('p');
+                            reminderLabel.setAttribute('class', "reminderLabel")
+                            // reminderLabel.htmlFor('meetingFormTextReminder');
+                            reminderLabel.textContent ="Send me a text reminder";
+                            reminderLabel.style.display = "inline";
+                            reminderLabel.style.marginLeft = "0.5vw";
+                            scheduleFormFieldtForms.appendChild(reminderLabel);    
+                            scheduleFormFieldtForms.appendChild(meetingFormTextReminder);    
+
+
                         // Form Fields | Confirm Button
 
 
