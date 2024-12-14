@@ -245,6 +245,11 @@ function whiteBoardFunction () {
           whiteboardHomButton.textContent= "< Back";
           todoMainRightEmpty.appendChild(whiteboardHomButton);
 
+          // The Click Event Listener to Go Back To The Home Page
+          whiteboardHomButton.addEventListener("click", () => {
+            todoMainRightEmpty.replaceWith(todoMainRight);
+          })
+
           // Whiteboard Container | Whiteboard
           const theWhiteboard = document.createElement('div');
           theWhiteboard.setAttribute('class', "theWhiteboard");
