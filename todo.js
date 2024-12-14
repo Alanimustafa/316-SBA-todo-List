@@ -195,7 +195,7 @@ todoBody.setAttribute('class','todoBody');
                           // The Calendar | Previous Button
                           const calPreviousButton = document.createElement ('button');
                           calPreviousButton.setAttribute('class', 'calPreviousButton');
-                        //   calPreviousButton.classList.add('allButtonsHover');
+                          // calPreviousButton.classList.add('allButtonsHover');
                           calPreviousButton.textContent= "Previous";
                           calPrevNexContainer.appendChild(calPreviousButton);
 
@@ -203,7 +203,7 @@ todoBody.setAttribute('class','todoBody');
                           // The Calendar | Next Button
                           const calNextButton = document.createElement ('button');
                           calNextButton.setAttribute('class', 'calNextButton');
-                         // calNextButton.classList.add('allButtonsHover');
+                          // calNextButton.classList.add('allButtonsHover');
                           calNextButton.textContent= "Next";
                           calPrevNexContainer.appendChild(calNextButton);
                     
@@ -240,9 +240,11 @@ function whiteBoardFunction () {
       todoMainRight.replaceWith(todoMainRightEmpty);
 
           // Whiteboard Container | Home Button
-          const whiatboardHomeButton = document.createElement('div');
-          whiatboardHomeButton.setAttribute('class', "whiatboardHomeButton");
-          todoMainRight.replaceWith(whiatboardHomeButton);
+          const whiteboardHomButton = document.createElement ('button');
+          whiteboardHomButton.setAttribute('class', 'whiteboardHomButton');
+          whiteboardHomButton.classList.add('allButtonsHover');
+          whiteboardHomButton.textContent= "Back";
+          todoMainRightEmpty.appendChild(whiteboardHomButton);
 
           // Whiteboard Container | Whiteboard
           
