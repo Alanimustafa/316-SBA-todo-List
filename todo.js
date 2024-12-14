@@ -178,6 +178,13 @@ todoBody.setAttribute('class','todoBody');
                 theCalendar.setAttribute('class', "theCalendar");
                 mainRightBottom.appendChild(theCalendar);
 
+                      // Todo operation | Container 2 | Calendar and Invitations | LEFT | Next and Previous Buttons Container | Height 10% - Width 100%
+                      const calPrevNexContainer = document.createElement('div');
+                      calPrevNexContainer.setAttribute('class', "calPrevNexContainer");
+                      mainRightBottom.appendChild(calPrevNexContainer);
+      
+                      
+
                     // The Calendar | Next Button
                     const calPreviousButton = document.createElement ('button');
                     calPreviousButton.setAttribute('class', 'calPreviousButton');
