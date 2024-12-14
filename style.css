@@ -215,6 +215,12 @@ body {
             }
 
 
+                  .calPrevNexContainer {
+                    border: solid green 2px;
+                    width: 100%;
+                    height: 10%;
+
+                  }
                         .calPreviousButton{
                           background: none;
                           border: none;

@@ -181,7 +181,7 @@ todoBody.setAttribute('class','todoBody');
                       // Todo operation | Container 2 | Calendar and Invitations | LEFT | Next and Previous Buttons Container | Height 10% - Width 100%
                       const calPrevNexContainer = document.createElement('div');
                       calPrevNexContainer.setAttribute('class', "calPrevNexContainer");
-                      mainRightBottom.appendChild(calPrevNexContainer);
+                      theCalendar.appendChild(calPrevNexContainer);
       
                       
 
@@ -190,7 +190,7 @@ todoBody.setAttribute('class','todoBody');
                     calPreviousButton.setAttribute('class', 'calPreviousButton');
                     calPreviousButton.classList.add('allButtonsHover');
                     calPreviousButton.textContent= "Previous";
-                    theCalendar.appendChild(calPreviousButton);
+                    calPrevNexContainer.appendChild(calPreviousButton);
                     
 
                   
