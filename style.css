@@ -305,7 +305,8 @@ body {
 /* SCHEDULE A MEETING FUNCTION */
 
 .scheduleMeetingHomButton,
-.scheduleMeetingSubmitButton {
+.scheduleMeetingSubmitButton,
+.meetingDetails {
   background: none;
   border: none;
   cursor: pointer;
@@ -403,7 +404,7 @@ body {
 
 
 .todoListTableCells {
-  border: solid black 1px;
+  /* border: solid black 1px; */
   width: 98%;
   height: auto;
   justify-self: center;
@@ -411,7 +412,7 @@ body {
 }
 
 .upcomingMeetingTableRow{
-  border: solid red 1px;
+  /* border: solid red 1px; */
   width: 98%;
   height: 30px;
   justify-self: center;
@@ -419,11 +420,21 @@ body {
 }
 
 .upcomingMeetingTableRowCell1 {
-  border: solid red 1px; 
+  /* border: solid red 1px;  */
   width: 20vw;
 }
 
 .upcomingMeetingTableRowCell2 {
-  border: solid greenyellow 1px;
+  /* border: solid greenyellow 1px; */
   width: 5vw;
+  margin-right: none;
+}
+
+.meetingDetails {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(0, 132, 255);
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 20px;
 }

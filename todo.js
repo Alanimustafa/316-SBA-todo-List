@@ -523,11 +523,18 @@ function scheduleAmeeting () {
                           upcomingMeetingTableRowCell2.setAttribute('class', "upcomingMeetingTableRowCell2");
                           upcomingMeetingTableRow.append(upcomingMeetingTableRowCell2);
 
-
+                          // Submiting the Meeting to the table.
                           const upcomingMeeting = document.createElement('li');
                           upcomingMeeting.setAttribute('class', "upcomingMeeting");
                           upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${(meetingFormPersonName.value)}.`;
                           upcomingMeetingTableRowCell1.appendChild(upcomingMeeting);
+
+                          // Meeting Details Button
+                          const meetingDetails = document.createElement ('button');
+                          meetingDetails.setAttribute('class', 'meetingDetails');
+                          meetingDetails.textContent= "Details";
+                          meetingDetails.classList.add('allButtonsHover');
+                          upcomingMeetingTableRowCell2.append(meetingDetails);
 
                         })
 
