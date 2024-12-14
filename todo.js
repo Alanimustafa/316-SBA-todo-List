@@ -409,8 +409,20 @@ function scheduleAmeeting () {
                           const meetingPersonPhoneValue = event.target.value;
                           console.log("Phone No. :", event.target.value);
                         });
+
                         // Form Fields | Person Phone Email
-                        // Form Fields | Meeting Location
+                        const meetingFormPersonEmail = document.createElement('input');
+                        meetingFormPersonEmail.setAttribute('class', 'meetingFormPersonEmail');
+                        
+                        meetingFormPersonEmail.setAttribute("type", "tel");
+                        meetingFormPersonEmail.setAttribute("placeholder", "Email");
+                        scheduleFormFieldtForms.appendChild(meetingFormPersonEmail);
+
+                        meetingFormPersonEmail.addEventListener("change", (event) => {
+                          const meetingPersonPhoneValue = event.target.value;
+                          console.log("Email :", event.target.value);
+                        });
+                        // Form Fields | Person State
                         // Form Fields | Text Reminder
                         // Form Fields | Confirm Button
 
