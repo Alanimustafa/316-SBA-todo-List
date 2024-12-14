@@ -301,6 +301,18 @@ function scheduleAmeeting () {
               scheduleFormField.setAttribute('class', 'scheduleFormField');
               scheduleFormContainer.appendChild(scheduleFormField);
 
+              
+                    // Schedule a Meeting | Form Container | Form Fields | Has (7) forms
+
+                        // Form Fields | Date
+                        // Form Fields | Time
+                        // Form Fields | Meet with Person Name
+                        // Form Fields | Person Phone Number
+                        // Form Fields | Person Phone Email
+                        // Form Fields | Location
+                        // Form Fields | Text Reminder
+                        // Form Fields | Confirm Button
+
 
 }
 
