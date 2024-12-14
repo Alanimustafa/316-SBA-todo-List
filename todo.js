@@ -3,7 +3,6 @@ const todoBody = document.querySelector('body');
 todoBody.setAttribute('class','todoBody');
 
   // Todo Main Container | Width 80% - Height 80% | Has (2) Containers | LEFT: Todo Form | RIGHT: Todo List
-
   const todoMainContainer = document.createElement('div');
   todoMainContainer.setAttribute('class', 'todo-Main-Container');
   todoBody.appendChild(todoMainContainer);
@@ -22,7 +21,7 @@ todoBody.setAttribute('class','todoBody');
       todoMainContainer.appendChild(todoMainBottom);
 
 
-          // Todo Buttons | LEFT | Width: 25% - Height: 100% | Has (3) Containers | TOP: Buttons | CENTER: Todo Form | BOTTOM: Copyrights and Contact us
+          // Todo Buttons | LEFT | Width: 25% - Height: 100% | Has (2) Containers | TOP: 4 Buttons | BOTTOM: My Account 
           const buttonsMainLeft = document.createElement('div');
           buttonsMainLeft.setAttribute('class', "buttonMainLeft");
           todoMainBottom.appendChild(buttonsMainLeft);
@@ -60,6 +59,14 @@ todoBody.setAttribute('class','todoBody');
                     homeWhiteboardButton.classList.add('allButtonsHover');
                     homeWhiteboardButton.textContent= "Whiteboard";
                     homeButtonsTopLeft.appendChild(homeWhiteboardButton);
+
+// --------- I'm here ----------------
+
+                    // Adding the Event Listener Click to the Whiteboard Button |
+                    homeWhiteboardButton.addEventListener("click", () => {
+                      whiteBoardFunction();
+                    });
+                    
 
 
               // Todo Buttons | BOTTOM | My Account |  Width: 100% - Height: 20%
@@ -225,6 +232,13 @@ todoBody.setAttribute('class','todoBody');
 // CONTACTS FUNCTION
 
 // WHITEBOARD FUNCTION
+function whiteBoardFunction () {
+
+      // One Cotainer Clear 
+      const whiteoardContainer = document.createElement('div');
+          whiteoardContainer.setAttribute('class', "whiteoardContainer");
+          todoMainRight.replaceWith(whiteoardContainer);
+}
 
 // MY ACCOUNT FUNCTION
 
