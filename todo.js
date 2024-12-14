@@ -185,12 +185,20 @@ todoBody.setAttribute('class','todoBody');
       
                       
 
-                    // The Calendar | Next Button
-                    const calPreviousButton = document.createElement ('button');
-                    calPreviousButton.setAttribute('class', 'calPreviousButton');
-                    calPreviousButton.classList.add('allButtonsHover');
-                    calPreviousButton.textContent= "Previous";
-                    calPrevNexContainer.appendChild(calPreviousButton);
+                          // The Calendar | Previous Button
+                          const calPreviousButton = document.createElement ('button');
+                          calPreviousButton.setAttribute('class', 'calPreviousButton');
+                          calPreviousButton.classList.add('allButtonsHover');
+                          calPreviousButton.textContent= "Previous";
+                          calPrevNexContainer.appendChild(calPreviousButton);
+
+
+                          // The Calendar | Next Button
+                          const calNextButton = document.createElement ('button');
+                          calNextButton.setAttribute('class', 'calNextButton');
+                          calNextButton.classList.add('allButtonsHover');
+                          calNextButton.textContent= "Next";
+                          calPrevNexContainer.appendChild(calNextButton);
                     
 
                   
