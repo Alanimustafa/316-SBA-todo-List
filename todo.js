@@ -381,7 +381,7 @@ function scheduleAmeeting () {
 
                         meetingFormTime.addEventListener("change", (event) => {
                           const meetingTimeValue = event.target.value;
-                          console.log("Selected date:", event.target.value);
+                          console.log("Selected Time:", event.target.value);
                         });
 
                         // Form Fields | Meet with Person Name
@@ -394,10 +394,21 @@ function scheduleAmeeting () {
 
                         meetingFormPersonName.addEventListener("change", (event) => {
                           const meetingPersonNameValue = event.target.value;
-                          console.log("Selected date:", event.target.value);
+                          console.log("Person Name:", event.target.value);
                         });
 
                         // Form Fields | Person Phone Number
+                        const meetingFormPersonPhone = document.createElement('input');
+                        meetingFormPersonPhone.setAttribute('class', 'meetingFormPersonPhone');
+                        
+                        meetingFormPersonPhone.setAttribute("type", "tel");
+                        meetingFormPersonPhone.setAttribute("placeholder", "Phone Number");
+                        scheduleFormFieldtForms.appendChild(meetingFormPersonPhone);
+
+                        meetingFormPersonPhone.addEventListener("change", (event) => {
+                          const meetingPersonPhoneValue = event.target.value;
+                          console.log("Phone No. :", event.target.value);
+                        });
                         // Form Fields | Person Phone Email
                         // Form Fields | Meeting Location
                         // Form Fields | Text Reminder
