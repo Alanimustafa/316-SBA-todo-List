@@ -453,15 +453,14 @@ function scheduleAmeeting () {
                         meetingFormTextReminder.setAttribute('class', 'meetingFormTextReminder');
                         meetingFormTextReminder.setAttribute("type", "checkbox");
                         
+                        // Form Fields | Text Reminder | Checkbox activation
                         meetingFormTextReminder.addEventListener("change", (event) => {
-                          
                           const textReminderEvent = event.target;
-
-                          if (meetingFormTextReminder.checked) { 
-                            prompt ("Please enter a phone number");
-                          } else {
-                            alert ("Text reminder has been cancelled");
-                          }
+                            if (meetingFormTextReminder.checked) { 
+                              prompt ("Please enter a phone number");
+                            } else {
+                              alert ("Text reminder has been cancelled");
+                            }
                         })
 
                             // Label text
@@ -471,11 +470,22 @@ function scheduleAmeeting () {
                             reminderLabel.textContent ="Send me a text reminder";
                             reminderLabel.style.display = "inline";
                             reminderLabel.style.marginLeft = "0.5vw";
+                            reminderLabel.style.marginRight = "0.5vw";
+                            reminderLabel.style.marginTop = "1em";
+                            reminderLabel.style.fontWeight = "bold";
                             scheduleFormFieldtForms.appendChild(reminderLabel);    
                             scheduleFormFieldtForms.appendChild(meetingFormTextReminder);    
 
 
                         // Form Fields | Confirm Button
+                        const scheduleMeetingSubmitButton = document.createElement ('button');
+                          scheduleMeetingSubmitButton.setAttribute('class', 'scheduleMeetingSubmitButton');
+                          // scheduleMeetingSubmitButton.classList.add('allButtonsHover');
+                          scheduleMeetingSubmitButton.textContent= "Submit";
+                          scheduleMeetingSubmitButton.classList.add('allButtonsHover');
+                          scheduleMeetingSubmitButton.style.marginLeft = "70%";
+
+                          scheduleFormFieldtForms.appendChild(scheduleMeetingSubmitButton);
 
 
 }
