@@ -301,15 +301,42 @@ function scheduleAmeeting () {
               scheduleFormField.setAttribute('class', 'scheduleFormField');
               scheduleFormContainer.appendChild(scheduleFormField);
 
-              
+                    // Schedule a Meeting | Form Container | Form Fields | Fields Names
+                    const scheduleFormFieldtheTitles = document.createElement('div');
+                    scheduleFormFieldtheTitles.setAttribute('class', 'scheduleFormFieldtheTitles');
+                    scheduleFormField.appendChild(scheduleFormFieldtheTitles);
+
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Date
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Time
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Name
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Number
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Email
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Meeting Location
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Text Reminder
+
                     // Schedule a Meeting | Form Container | Form Fields | Has (7) forms
+                    const scheduleFormFieldtForms = document.createElement('div');
+                    scheduleFormFieldtForms.setAttribute('class', 'scheduleFormFieldtForms');
+                    scheduleFormField.appendChild(scheduleFormFieldtForms);
+                          
 
                         // Form Fields | Date
+                        const meetingFormDate = document.createElement('input');
+                        meetingFormDate.setAttribute('class', 'meetingFormDate');
+                        
+                        meetingFormDate.setAttribute("type", "date");
+                        meetingFormDate.setAttribute("placeholder", "Select a date");
+                        scheduleFormFieldtForms.appendChild(meetingFormDate);
+
+                        meetingFormDate.addEventListener("change", (event) => {
+                          const meetingDateValue = event.target.value;
+                          console.log("Selected date:", event.target.value);
+                        });
                         // Form Fields | Time
                         // Form Fields | Meet with Person Name
                         // Form Fields | Person Phone Number
                         // Form Fields | Person Phone Email
-                        // Form Fields | Location
+                        // Form Fields | Meeting Location
                         // Form Fields | Text Reminder
                         // Form Fields | Confirm Button
 
