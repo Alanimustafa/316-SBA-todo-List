@@ -212,3 +212,28 @@ todoBody.setAttribute('class','todoBody');
                 const toDoList = document.createElement('div');
                 toDoList.setAttribute('class', "toDoList");
                 mainRightBottom.appendChild(toDoList);
+
+
+
+
+// ------------------------------ ALL FUNCTIONS ---------------------------------------------
+
+// HOME BUTTON FUNCTION
+
+// CALENDAR FUNCTION
+
+// CONTACTS FUNCTION
+
+// WHITEBOARD FUNCTION
+
+// MY ACCOUNT FUNCTION
+
+// START A MEETING FUNCTION
+
+// JOIN A MEETING FUNCTION
+
+// SCHEDULE A MEETING FUNCTION
+
+// CALENDAR PREVIOUS BUTTON MEETING
+
+// CALENDAR NEXT BUTTON MEETING
