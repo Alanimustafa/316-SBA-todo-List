@@ -268,9 +268,21 @@ function whiteBoardFunction () {
 // SCHEDULE A MEETING FUNCTION
 function scheduleAmeeting () {
 
+    // Schedule a meeting Container
     const meetingScheduleEmpty = document.createElement('div');
     meetingScheduleEmpty.setAttribute('class', 'meetingScheduleEmpty');
     meetingSchedule.replaceWith(meetingScheduleEmpty);
+
+        // Schedule a Meeting | Back Button
+        const scheduleMeetingHomButton = document.createElement ('button');
+          scheduleMeetingHomButton.setAttribute('class', 'scheduleMeetingHomButton');
+          scheduleMeetingHomButton.textContent= "< Back";
+          meetingScheduleEmpty.appendChild(scheduleMeetingHomButton);
+
+          // The Click Event Listener to Go Back To The Home Page
+          scheduleMeetingHomButton.addEventListener("click", () => {
+            meetingScheduleEmpty.replaceWith(meetingSchedule);
+          })
 
 
 
