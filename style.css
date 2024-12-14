@@ -306,7 +306,9 @@ body {
 
 .scheduleMeetingHomButton,
 .scheduleMeetingSubmitButton,
-.meetingDetails {
+.meetingDetails,
+.quickNotesMeetingREscheduleButton,
+.quickNotesMeetingCancelButton {
   background: none;
   border: none;
   cursor: pointer;
@@ -437,4 +439,53 @@ body {
   color: rgb(0, 132, 255);
   font-family: Arial, Helvetica, sans-serif ;
   font-size: 20px;
+}
+
+
+.quickNotesTableContainer{
+border: solid orange 2px;
+height: 80%;;
+}
+
+
+.quickNotesTable {
+  border: solid red 2px;
+  width: 100%;
+  height: 65%;
+
+}
+
+.quickNotesTableRow1,
+.quickNotesTableRow2,
+.quickNotesTableRow3,
+.quickNotesTableRow4 {
+  border: solid green 2px;
+  width: 20vw;
+  height: auto;
+}
+
+.quickNotesTableRow1Cell1,
+.quickNotesTableRow1Cell3,
+.quickNotesTableRow2Cell1,
+.quickNotesTableRow2Cell3,
+.quickNotesTableRow3Cell1,
+.quickNotesTableRow3Cell3,
+.quickNotesTableRow4Cell1,
+.quickNotesTableRow4Cell3 
+{ 
+  border: solid blue 2px;
+  width: 3vw;
+  height: 20%;
+  font-size: 15px;
+  font-weight: bold;
+  color: green;
+
+}
+
+.quickNotesOPButtons {
+  display: flex;
+  flex-wrap:nowrap;
+  border: solid purple 2px;
+  height: 30%;
+
 }

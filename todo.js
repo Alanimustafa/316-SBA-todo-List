@@ -539,9 +539,6 @@ function scheduleAmeeting () {
                           // Meeting Details Button Function
                           meetingDetails.addEventListener('click', (event) => {
 
-                            // const quickNotesTable = document.createElement('table');
-                            // quickNotesTable.setAttribute('class', "quickNotesTable");
-                            // agendaContents.replaceWith(quickNotesTable);
                             postMeetingDetails (event);
                           })
 
@@ -550,23 +547,140 @@ function scheduleAmeeting () {
 
 function postMeetingDetails () {
 
-      // Quick Notes Table
-      const quickNotesTable = document.createElement('table');
-      quickNotesTable.setAttribute('class', "quickNotesTable");
-      agendaContents.replaceWith(quickNotesTable);
+  // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
 
-        // Quick Notes Table | Row 1
-            // Quick Notes Table | Row 1 | Cell 1
-            // Quick Notes Table | Row 1 | Cell 2
-            // Quick Notes Table | Row 1 | Cell 3
-        // Quick Notes Table | Row 2
-            // Quick Notes Table | Row 2 | Cell 1
-            // Quick Notes Table | Row 2 | Cell 2
-            // Quick Notes Table | Row 2 | Cell 3
-        // Quick Notes Table | Row 3
-            // Quick Notes Table | Row 3 | Cell 1
-            // Quick Notes Table | Row 3 | Cell 2
-            // Quick Notes Table | Row 3 | Cell 3
+
+      // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+      const quickNotesTableContainer = document.createElement('div');
+      quickNotesTableContainer.setAttribute('class', 'quickNotesTableContainer');
+      agendaContents.replaceWith(quickNotesTableContainer);
+
+      
+
+          // Quick Notes Table
+          const quickNotesTable = document.createElement('table');
+          quickNotesTable.setAttribute('class', "quickNotesTable");
+          // quickNotesTable.textContent = "I'm here";
+          quickNotesTableContainer.append(quickNotesTable);
+
+
+
+            // Quick Notes Table | Row 1
+            const quickNotesTableRow1 = document.createElement('tr');
+            quickNotesTableRow1.setAttribute('class', "quickNotesTableRow1");
+            quickNotesTable.append(quickNotesTableRow1);
+
+                // Quick Notes Table | Row 1 | Cell 1
+                const quickNotesTableRow1Cell1 = document.createElement('td');
+                quickNotesTableRow1Cell1.setAttribute('class', "quickNotesTableRow1Cell1");
+                quickNotesTableRow1Cell1.textContent = "Name"
+                quickNotesTableRow1.append(quickNotesTableRow1Cell1);
+        
+                
+                // Quick Notes Table | Row 1 | Cell 2
+                const quickNotesTableRow1Cell2 = document.createElement('td');
+                quickNotesTableRow1Cell2.setAttribute('class', "quickNotesTableRow1Cell2");
+                quickNotesTableRow1.append(quickNotesTableRow1Cell2);
+
+                // Quick Notes Table | Row 1 | Cell 3
+                const quickNotesTableRow1Cell3 = document.createElement('td');
+                quickNotesTableRow1Cell3.setAttribute('class', "quickNotesTableRow1Cell3");
+                quickNotesTableRow1Cell3.textContent = "Subject"
+                quickNotesTableRow1.append(quickNotesTableRow1Cell3);
+
+                // Quick Notes Table | Row 1 | Cell 4
+                const quickNotesTableRow1Cell4 = document.createElement('td');
+                quickNotesTableRow1Cell4.setAttribute('class', "quickNotesTableRow1Cell4");
+                quickNotesTableRow1.append(quickNotesTableRow1Cell4);
+
+
+
+            // Quick Notes Table | Row 2
+            const quickNotesTableRow2 = document.createElement('tr');
+            quickNotesTableRow2.setAttribute('class', "quickNotesTableRow2");
+            quickNotesTable.append(quickNotesTableRow2);
+
+                // Quick Notes Table | Row 2 | Cell 1
+                const quickNotesTableRow2Cell1 = document.createElement('td');
+                quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
+                quickNotesTableRow2Cell1.textContent ="Date"
+                quickNotesTableRow2.append(quickNotesTableRow2Cell1);
+
+                // Quick Notes Table | Row 2 | Cell 2
+                const quickNotesTableRow2Cell2 = document.createElement('td');
+                quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
+                quickNotesTableRow2.append(quickNotesTableRow2Cell2);
+
+                // Quick Notes Table | Row 2 | Cell 3
+                const quickNotesTableRow2Cell3 = document.createElement('td');
+                quickNotesTableRow2Cell3.setAttribute('class', "quickNotesTableRow2Cell3");
+                quickNotesTableRow2Cell3.textContent = "Time";
+                quickNotesTableRow2.append(quickNotesTableRow2Cell3);
+
+                // Quick Notes Table | Row 2 | Cell 4
+                const quickNotesTableRow2Cell4 = document.createElement('td');
+                quickNotesTableRow2Cell4.setAttribute('class', "quickNotesTableRow2Cell4");
+                quickNotesTableRow2.append(quickNotesTableRow2Cell4);
+
+
+
+            // Quick Notes Table | Row 3
+            const quickNotesTableRow3 = document.createElement('tr');
+            quickNotesTableRow3.setAttribute('class', "quickNotesTableRow3");
+            quickNotesTable.append(quickNotesTableRow3);
+
+                // Quick Notes Table | Row 3 | Cell 1
+                const quickNotesTableRow3Cell1 = document.createElement('td');
+                quickNotesTableRow3Cell1.setAttribute('class', "quickNotesTableRow3Cell1");
+                quickNotesTableRow3Cell1.textContent ="Phone"
+                quickNotesTableRow3.append(quickNotesTableRow3Cell1);
+
+                // Quick Notes Table | Row 3 | Cell 2
+                const quickNotesTableRow3Cell2 = document.createElement('td');
+                quickNotesTableRow3Cell2.setAttribute('class', "quickNotesTableRow3Cell2");
+                quickNotesTableRow3.append(quickNotesTableRow3Cell2);
+
+                // Quick Notes Table | Row 3 | Cell 3
+                const quickNotesTableRow3Cell3 = document.createElement('td');
+                quickNotesTableRow3Cell3.setAttribute('class', "quickNotesTableRow3Cell3");
+                quickNotesTableRow3Cell3.textContent= "Email";
+                quickNotesTableRow3.append(quickNotesTableRow3Cell3);
+
+                // Quick Notes Table | Row 3 | Cell 4
+                const quickNotesTableRow3Cell4 = document.createElement('td');
+                quickNotesTableRow3Cell4.setAttribute('class', "quickNotesTableRow3Cell4");
+                quickNotesTableRow3.append(quickNotesTableRow3Cell4);
+
+
+
+      // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule | 2- Cancel
+      const quickNotesOPButtons = document.createElement('div');
+      quickNotesOPButtons.setAttribute('class', 'quickNotesOPButtons');
+      quickNotesTableContainer.appendChild(quickNotesOPButtons);
+
+
+          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule
+          const quickNotesMeetingREscheduleButton = document.createElement ('button');
+          quickNotesMeetingREscheduleButton.setAttribute('class', 'quickNotesMeetingREscheduleButton');
+          quickNotesMeetingREscheduleButton.textContent= "Reschedule";
+          quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
+          quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
+          quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
+          
+          
+          
+          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 2- Cancel
+          const quickNotesMeetingCancelButton = document.createElement ('button');
+          quickNotesMeetingCancelButton.setAttribute('class', 'quickNotesMeetingCancelButton');
+          quickNotesMeetingCancelButton.textContent= "Cancel";
+          quickNotesMeetingCancelButton.classList.add('allButtonsHover');
+          quickNotesMeetingCancelButton.style.color = "darkred";
+          quickNotesMeetingCancelButton.style.marginLeft = "30%";
+          quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
+
+
+
+
 
 }
 
