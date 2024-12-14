@@ -201,6 +201,7 @@ todoBody.setAttribute('class','todoBody');
                           calPrevNexContainer.appendChild(calNextButton);
                     
 
+                      // Todo operation | Container 2 | Calendar and Invitations | LEFT | Calendar Months | Height 90% - Width 100%
                   
                   theCalendar.append(theCalendayFunction());
 
