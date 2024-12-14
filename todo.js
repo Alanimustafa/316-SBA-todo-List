@@ -535,11 +535,38 @@ function scheduleAmeeting () {
                           meetingDetails.textContent= "Details";
                           meetingDetails.classList.add('allButtonsHover');
                           upcomingMeetingTableRowCell2.append(meetingDetails);
+                          
+                          // Meeting Details Button Function
+                          meetingDetails.addEventListener('click', (event) => {
+
+                            // const quickNotesTable = document.createElement('table');
+                            // quickNotesTable.setAttribute('class', "quickNotesTable");
+                            // agendaContents.replaceWith(quickNotesTable);
+                            postMeetingDetails (event);
+                          })
 
                         })
+}
 
+function postMeetingDetails () {
 
+      // Quick Notes Table
+      const quickNotesTable = document.createElement('table');
+      quickNotesTable.setAttribute('class', "quickNotesTable");
+      agendaContents.replaceWith(quickNotesTable);
 
+        // Quick Notes Table | Row 1
+            // Quick Notes Table | Row 1 | Cell 1
+            // Quick Notes Table | Row 1 | Cell 2
+            // Quick Notes Table | Row 1 | Cell 3
+        // Quick Notes Table | Row 2
+            // Quick Notes Table | Row 2 | Cell 1
+            // Quick Notes Table | Row 2 | Cell 2
+            // Quick Notes Table | Row 2 | Cell 3
+        // Quick Notes Table | Row 3
+            // Quick Notes Table | Row 3 | Cell 1
+            // Quick Notes Table | Row 3 | Cell 2
+            // Quick Notes Table | Row 3 | Cell 3
 
 }
 
