@@ -5,6 +5,7 @@ body {
   height: 100vh; 
   margin: 0; 
   background-image: linear-gradient(lightblue, rgb(64, 64, 185));
+  position: inherit;
 }
 
 
@@ -15,7 +16,6 @@ body {
   width: 70vw;;
   height: 85vh;
   background-color: rgb(243, 242, 242);
-
 }
 
 .todoHeader {
@@ -372,4 +372,31 @@ body {
   margin: 6px;
   color: gray;
   font-size: 20px;
+}
+
+
+.todoListTitle{
+  color: rgb(0, 132, 255);
+  border-color: rgb(0, 132, 255);
+  font-size: 18px;
+  margin: 1%;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.todoListTable {
+  
+  width: 95%;
+  height: 85%;
+  justify-self: center;
+}
+
+.upcomingMeeting {
+  
+  width: 90%;
+  height: auto;
+  margin-top: 2vh;
+  justify-self: center;
+  font-size: 20px;
+  color: green;
 }

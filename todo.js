@@ -160,7 +160,7 @@ todoBody.setAttribute('class','todoBody');
                     joinMeetingButton.textContent= "Join a meeting";
                     meetingSchedule.appendChild(joinMeetingButton);
 
-// -- -- Im here ---------
+
                     // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | BOTTOM: Schedule A Meeting
                     const scheduleMeetingButton = document.createElement ('button');
                     scheduleMeetingButton.setAttribute('class', 'scheduleMeetingButton');
@@ -217,10 +217,24 @@ todoBody.setAttribute('class','todoBody');
                   
                  
 
-                // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | Width: 60% - Height: 100%
+                // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | Width: 60% - Height: 100% | Has (2) Containers | TOP: The Title | BOTTOM: ToDo List Table
                 const toDoList = document.createElement('div');
                 toDoList.setAttribute('class', "toDoList");
                 mainRightBottom.appendChild(toDoList);
+
+
+                        // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | TOP: The Title 
+                        const todoListTitle = document.createElement('div');
+                        todoListTitle.setAttribute('class', "todoListTitle");
+                        todoListTitle.textContent = "Upcoming meetings";
+                        toDoList.appendChild(todoListTitle);
+
+                        // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List |  BOTTOM: ToDo List Table
+                        const todoListTable = document.createElement('div');
+                        todoListTable.setAttribute('class', "todoListTable");
+                        
+                        toDoList.appendChild(todoListTable);
+                        
 
 
 
@@ -360,49 +374,50 @@ function scheduleAmeeting () {
                         // Form Fields | Date
                         const meetingFormDate = document.createElement('input');
                         meetingFormDate.setAttribute('class', 'meetingFormDate');
-                        
+                        meetingFormDate.style.width = "70%";
                         meetingFormDate.setAttribute("type", "date");
                         meetingFormDate.setAttribute("placeholder", "Select a date");
                         scheduleFormFieldtForms.appendChild(meetingFormDate);
 
                         meetingFormDate.addEventListener("change", (event) => {
                           const meetingDateValue = event.target.value;
-                          console.log("Selected date:", event.target.value);
+                          console.log("Selected date:", meetingDateValue);
+                          return meetingDateValue;
                         });
 
 
                         // Form Fields | Time
                         const meetingFormTime = document.createElement('input');
                         meetingFormTime.setAttribute('class', 'meetingFormTime');
-                        
+                        meetingFormTime.style.width = "70%";                        
                         meetingFormTime.setAttribute("type", "time");
                         meetingFormTime.setAttribute("placeholder", "Select a time");
                         scheduleFormFieldtForms.appendChild(meetingFormTime);
 
                         meetingFormTime.addEventListener("change", (event) => {
                           const meetingTimeValue = event.target.value;
-                          console.log("Selected Time:", event.target.value);
+                          console.log("Selected Time:", meetingTimeValue);
+                          return meetingTimeValue ;
                         });
 
 
                         // Form Fields | Meet with Person Name
                         const meetingFormPersonName = document.createElement('input');
                         meetingFormPersonName.setAttribute('class', 'meetingFormPersonName');
-                        
                         meetingFormPersonName.setAttribute("type", "text");
                         meetingFormPersonName.setAttribute("placeholder", "Person Name");
                         scheduleFormFieldtForms.appendChild(meetingFormPersonName);
 
                         meetingFormPersonName.addEventListener("change", (event) => {
                           const meetingPersonNameValue = event.target.value;
-                          console.log("Person Name:", event.target.value);
+                          console.log("Person Name:", meetingPersonNameValue);
+                          return meetingPersonNameValue;
                         });
 
 
                         // Form Fields | Person Phone Number
                         const meetingFormPersonPhone = document.createElement('input');
                         meetingFormPersonPhone.setAttribute('class', 'meetingFormPersonPhone');
-                        
                         meetingFormPersonPhone.setAttribute("type", "tel");
                         meetingFormPersonPhone.setAttribute("placeholder", "Phone Number");
                         scheduleFormFieldtForms.appendChild(meetingFormPersonPhone);
@@ -423,11 +438,12 @@ function scheduleAmeeting () {
                         // Form Fields | Person Email
                         const meetingFormPersonEmail = document.createElement('input');
                         meetingFormPersonEmail.setAttribute('class', 'meetingFormPersonEmail');
-                        
                         meetingFormPersonEmail.setAttribute("type", "eamil");
                         meetingFormPersonEmail.setAttribute("placeholder", "Email");
+                        meetingFormPersonEmail.style.width = "98%";
                         scheduleFormFieldtForms.appendChild(meetingFormPersonEmail);
 
+                        // 
                         meetingFormPersonEmail.addEventListener("change", (event) => {
                           event.preventDefault();
                           const meetingFormPersonEmail = event.target.value;
@@ -445,6 +461,7 @@ function scheduleAmeeting () {
                         meetingFormMeetingSubject.setAttribute('class', 'meetingFormMeetingSubject');
                         
                         meetingFormMeetingSubject.setAttribute("type", "text");
+                        meetingFormMeetingSubject.style.width = "98%";
                         meetingFormMeetingSubject.setAttribute("placeholder", "Meeting Subject");
                         scheduleFormFieldtForms.appendChild(meetingFormMeetingSubject);
 
@@ -479,13 +496,23 @@ function scheduleAmeeting () {
 
                         // Form Fields | Confirm Button
                         const scheduleMeetingSubmitButton = document.createElement ('button');
-                          scheduleMeetingSubmitButton.setAttribute('class', 'scheduleMeetingSubmitButton');
-                          // scheduleMeetingSubmitButton.classList.add('allButtonsHover');
-                          scheduleMeetingSubmitButton.textContent= "Submit";
-                          scheduleMeetingSubmitButton.classList.add('allButtonsHover');
-                          scheduleMeetingSubmitButton.style.marginLeft = "70%";
+                        scheduleMeetingSubmitButton.setAttribute('class', 'scheduleMeetingSubmitButton');
+                        scheduleMeetingSubmitButton.textContent= "Submit";
+                        scheduleMeetingSubmitButton.classList.add('allButtonsHover');
+                        scheduleMeetingSubmitButton.style.marginLeft = "70%";
+                        scheduleFormFieldtForms.appendChild(scheduleMeetingSubmitButton);
+                        
+                        // Form Fields | Confirm Button | Activation
+                        scheduleMeetingSubmitButton.addEventListener('click', (event) => {
+                          
+                          const upcomingMeeting = document.createElement('li');
+                          upcomingMeeting.setAttribute('class', "upcomingMeeting");
+                          upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${(meetingFormPersonName.value)}`;
+                          todoListTable.appendChild(upcomingMeeting);
 
-                          scheduleFormFieldtForms.appendChild(scheduleMeetingSubmitButton);
+                        })
+
+
 
 
 }
