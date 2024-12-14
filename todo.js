@@ -202,6 +202,9 @@ todoBody.setAttribute('class','todoBody');
                     
 
                       // Todo operation | Container 2 | Calendar and Invitations | LEFT | Calendar Months | Height 90% - Width 100%
+                      const calMonths = document.createElement('div');
+                      calMonths.setAttribute('class', "calMonths");
+                      theCalendar.appendChild(calMonths);
                   
                   theCalendar.append(theCalendayFunction());
 
