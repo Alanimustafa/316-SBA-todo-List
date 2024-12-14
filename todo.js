@@ -346,7 +346,7 @@ function scheduleAmeeting () {
                         const scheduleFormFieldLocation = document.createElement('div');
                         scheduleFormFieldLocation.setAttribute('class', 'scheduleFormFieldLocation');
                         scheduleFormFieldLocation.classList.add('formsTitles');
-                        scheduleFormFieldLocation.textContent = "Address :";
+                        scheduleFormFieldLocation.textContent = "State :";
                         scheduleFormFieldtheTitles.appendChild(scheduleFormFieldLocation);
 
                         
@@ -404,23 +404,38 @@ function scheduleAmeeting () {
                         meetingFormPersonPhone.setAttribute("type", "tel");
                         meetingFormPersonPhone.setAttribute("placeholder", "Phone Number");
                         scheduleFormFieldtForms.appendChild(meetingFormPersonPhone);
-
+                        
                         meetingFormPersonPhone.addEventListener("change", (event) => {
+                          
                           const meetingPersonPhoneValue = event.target.value;
-                          console.log("Phone No. :", event.target.value);
+
+                          if (meetingPersonPhoneValue.replace(/[^0-9]/g, '')) {
+                            console.log("Phone No. :", event.target.value);
+                          } else {
+                            
+                            alert("invalid Phone Number");
+                          }
                         });
 
-                        // Form Fields | Person Phone Email
+                        // Form Fields | Person Email
                         const meetingFormPersonEmail = document.createElement('input');
                         meetingFormPersonEmail.setAttribute('class', 'meetingFormPersonEmail');
                         
-                        meetingFormPersonEmail.setAttribute("type", "tel");
+                        meetingFormPersonEmail.setAttribute("type", "eamil");
                         meetingFormPersonEmail.setAttribute("placeholder", "Email");
                         scheduleFormFieldtForms.appendChild(meetingFormPersonEmail);
 
                         meetingFormPersonEmail.addEventListener("change", (event) => {
-                          const meetingPersonPhoneValue = event.target.value;
-                          console.log("Email :", event.target.value);
+                          event.preventDefault();
+                          const meetingFormPersonEmail = event.target.value;
+
+                              if (meetingFormPersonEmail.includes('@')) {
+                                console.log("Email :", event.target.value);
+                              } else {
+                                alert("invalid Email Address");
+                              }
+
+                          
                         });
                         // Form Fields | Person State
                         // Form Fields | Text Reminder
