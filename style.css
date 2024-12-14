@@ -395,8 +395,35 @@ body {
   
   width: 90%;
   height: auto;
-  margin-top: 2vh;
+  margin-top: 0vh;
   justify-self: center;
-  font-size: 20px;
+  font-size: 18px;
   color: green;
+}
+
+
+.todoListTableCells {
+  border: solid black 1px;
+  width: 98%;
+  height: auto;
+  justify-self: center;
+  margin-top: 2vh;
+}
+
+.upcomingMeetingTableRow{
+  border: solid red 1px;
+  width: 98%;
+  height: 30px;
+  justify-self: center;
+  margin-top: 2vh;
+}
+
+.upcomingMeetingTableRowCell1 {
+  border: solid red 1px; 
+  width: 20vw;
+}
+
+.upcomingMeetingTableRowCell2 {
+  border: solid greenyellow 1px;
+  width: 5vw;
 }

@@ -46,7 +46,6 @@ todoBody.setAttribute('class','todoBody');
                     homeCalendarButton.textContent= "Calendar";
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
 
-// --------- I'm here -------------
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
                     const homeContactsButton = document.createElement ('button');
                     homeContactsButton.setAttribute('class', 'homeContactsButton');
@@ -229,11 +228,15 @@ todoBody.setAttribute('class','todoBody');
                         todoListTitle.textContent = "Upcoming meetings";
                         toDoList.appendChild(todoListTitle);
 
-                        // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List |  BOTTOM: ToDo List Table
+                        // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List |  BOTTOM: ToDo List Table Container
                         const todoListTable = document.createElement('div');
                         todoListTable.setAttribute('class', "todoListTable");
-                        
                         toDoList.appendChild(todoListTable);
+
+                        // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List |  BOTTOM: ToDo List Table
+                        const todoListTableCells = document.createElement('table');
+                        todoListTableCells.setAttribute('class', "todoListTableCells");
+                        todoListTable.appendChild(todoListTableCells);
                         
 
 
@@ -505,10 +508,26 @@ function scheduleAmeeting () {
                         // Form Fields | Confirm Button | Activation
                         scheduleMeetingSubmitButton.addEventListener('click', (event) => {
                           
+                          // Table Row
+                          const upcomingMeetingTableRow = document.createElement('tr');
+                          upcomingMeetingTableRow.setAttribute('class', "upcomingMeetingTableRow");
+                          todoListTableCells.append(upcomingMeetingTableRow)
+
+                          // Table Cell 1
+                          const upcomingMeetingTableRowCell1 = document.createElement('td');
+                          upcomingMeetingTableRowCell1.setAttribute('class', "upcomingMeetingTableRowCell1");
+                          upcomingMeetingTableRow.append(upcomingMeetingTableRowCell1);
+
+                          // Table Cell 2
+                          const upcomingMeetingTableRowCell2 = document.createElement('td');
+                          upcomingMeetingTableRowCell2.setAttribute('class', "upcomingMeetingTableRowCell2");
+                          upcomingMeetingTableRow.append(upcomingMeetingTableRowCell2);
+
+
                           const upcomingMeeting = document.createElement('li');
                           upcomingMeeting.setAttribute('class', "upcomingMeeting");
-                          upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${(meetingFormPersonName.value)}`;
-                          todoListTable.appendChild(upcomingMeeting);
+                          upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${(meetingFormPersonName.value)}.`;
+                          upcomingMeetingTableRowCell1.appendChild(upcomingMeeting);
 
                         })
 
