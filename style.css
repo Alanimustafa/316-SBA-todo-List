@@ -343,11 +343,26 @@ body {
 .scheduleFormFieldtheTitles {
   border: solid red 2px;
   background-color: rgb(255, 255, 255);                
+  width: 35%;
+  height: 91%;
+}
+
+.scheduleFormFieldtForms {
+  border: solid red 2px;
+  background-color: rgb(255, 255, 255);                
   width: 50%;
   height: 91%;
 }
 
-.meetingFormDate {
+.meetingFormDate,
+.meetingFormTime {
   color: rgb(0, 132, 255);
-  border-color: rgb(0, 132, 255);;
+  border-color: rgb(0, 132, 255);
+  font-size: 15px;
+}
+
+.formsTitles {
+  margin: 6px;
+  color: gray;
+  font-size: 20px;
 }
