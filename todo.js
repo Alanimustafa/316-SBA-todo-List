@@ -297,6 +297,10 @@ function scheduleAmeeting () {
                     
 
               // Schedule a Meeting | Form Container | 2- Form Fields
+              const scheduleFormField = document.createElement('div');
+              scheduleFormField.setAttribute('class', 'scheduleFormField');
+              scheduleFormField.textContent = "Schedule a meeting";
+              scheduleFormContainer.appendChild(scheduleFormField);
 
 
 }
