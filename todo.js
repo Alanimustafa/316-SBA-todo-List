@@ -275,15 +275,23 @@ function scheduleAmeeting () {
 
         // Schedule a Meeting | Back Button
         const scheduleMeetingHomButton = document.createElement ('button');
-          scheduleMeetingHomButton.setAttribute('class', 'scheduleMeetingHomButton');
-          scheduleMeetingHomButton.textContent= "< Back";
-          meetingScheduleEmpty.appendChild(scheduleMeetingHomButton);
+        scheduleMeetingHomButton.setAttribute('class', 'scheduleMeetingHomButton');
+        scheduleMeetingHomButton.textContent= "< Back";
+        meetingScheduleEmpty.appendChild(scheduleMeetingHomButton);
 
-          // The Click Event Listener to Go Back To The Home Page
-          scheduleMeetingHomButton.addEventListener("click", () => {
-            meetingScheduleEmpty.replaceWith(meetingSchedule);
-          })
+            // The Click Event Listener to Go Back To The Home Page
+            scheduleMeetingHomButton.addEventListener("click", () => {
+              meetingScheduleEmpty.replaceWith(meetingSchedule);
+            })
 
+        // Schedule a Meeting | Form Container | Has (2) Containers | 1- Form Name | 2- Form Fields
+        const scheduleFormContainer = document.createElement('div');
+        scheduleFormContainer.setAttribute('class', 'scheduleFormContainer');
+        meetingScheduleEmpty.appendChild(scheduleFormContainer);
+
+              // Schedule a Meeting | Form Container | 1- Form Name 
+
+              // Schedule a Meeting | Form Container | 2- Form Fields
 
 
 }
