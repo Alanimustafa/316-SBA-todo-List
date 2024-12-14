@@ -342,11 +342,11 @@ function scheduleAmeeting () {
                         scheduleFormFieldtheTitles.appendChild(scheduleFormFieldEmail);
 
 
-                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Meeting Location
+                        // Schedule a Meeting | Form Container | Form Fields | Fields Names | Meeting Subject
                         const scheduleFormFieldLocation = document.createElement('div');
                         scheduleFormFieldLocation.setAttribute('class', 'scheduleFormFieldLocation');
                         scheduleFormFieldLocation.classList.add('formsTitles');
-                        scheduleFormFieldLocation.textContent = "State :";
+                        scheduleFormFieldLocation.textContent = "Subject :";
                         scheduleFormFieldtheTitles.appendChild(scheduleFormFieldLocation);
 
                         
@@ -434,10 +434,15 @@ function scheduleAmeeting () {
                               } else {
                                 alert("invalid Email Address");
                               }
-
-                          
                         });
-                        // Form Fields | Person State
+                        // Form Fields | Meeting Subject
+                        const meetingFormMeetingSubject = document.createElement('input');
+                        meetingFormMeetingSubject.setAttribute('class', 'meetingFormMeetingSubject');
+                        
+                        meetingFormMeetingSubject.setAttribute("type", "text");
+                        meetingFormMeetingSubject.setAttribute("placeholder", "Meeting Subject");
+                        scheduleFormFieldtForms.appendChild(meetingFormMeetingSubject);
+
                         // Form Fields | Text Reminder
                         // Form Fields | Confirm Button
 

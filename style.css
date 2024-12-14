@@ -359,7 +359,8 @@ body {
 .meetingFormTime,
 .meetingFormPersonName,
 .meetingFormPersonPhone,
-.meetingFormPersonEmail {
+.meetingFormPersonEmail,
+.meetingFormMeetingSubject {
   color: rgb(0, 132, 255);
   border-color: rgb(0, 132, 255);
   font-size: 15px;
