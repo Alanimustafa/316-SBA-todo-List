@@ -242,11 +242,14 @@ function whiteBoardFunction () {
           // Whiteboard Container | Home Button
           const whiteboardHomButton = document.createElement ('button');
           whiteboardHomButton.setAttribute('class', 'whiteboardHomButton');
-          whiteboardHomButton.classList.add('allButtonsHover');
-          whiteboardHomButton.textContent= "Back";
+          whiteboardHomButton.textContent= "< Back";
           todoMainRightEmpty.appendChild(whiteboardHomButton);
 
           // Whiteboard Container | Whiteboard
+          const theWhiteboard = document.createElement('div');
+          theWhiteboard.setAttribute('class', "theWhiteboard");
+          theWhiteboard.style.backgroundImage = 'url("https://i.pinimg.com/736x/46/d8/5c/46d85cc0cdcd655156180e602ded7471.jpg")';
+          todoMainRightEmpty.appendChild(theWhiteboard);
           
 
 
