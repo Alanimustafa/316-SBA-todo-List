@@ -194,6 +194,15 @@ body {
                 margin-left: 1vw;                
               }
 
+              .meetingScheduleEmpty {
+                border: Solid rgb(212, 210, 210) 1px;
+                background-color: rgb(255, 255, 255);                
+                width: 45%;
+                height: 100%;
+                margin-left: 1vw;                
+          
+              }
+
                     .startMeetingButton,
                     .joinMeetingButton,
                     .scheduleMeetingButton {
@@ -291,3 +300,7 @@ body {
       background-size: 60%;
       background-position:center;
     }
+
+
+/* SCHEDULE A MEETING FUNCTION */
+    

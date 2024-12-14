@@ -46,6 +46,7 @@ todoBody.setAttribute('class','todoBody');
                     homeCalendarButton.textContent= "Calendar";
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
 
+// --------- I'm here -------------
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
                     const homeContactsButton = document.createElement ('button');
                     homeContactsButton.setAttribute('class', 'homeContactsButton');
@@ -60,12 +61,10 @@ todoBody.setAttribute('class','todoBody');
                     homeWhiteboardButton.textContent= "Whiteboard";
                     homeButtonsTopLeft.appendChild(homeWhiteboardButton);
 
-// --------- I'm here ----------------
-
                     // Adding the Event Listener Click to the Whiteboard Button |
-                    homeWhiteboardButton.addEventListener("click", () => {
-                      whiteBoardFunction();
-                    });
+                      homeWhiteboardButton.addEventListener("click", () => {
+                        whiteBoardFunction();
+                      });
                     
 
 
@@ -161,13 +160,16 @@ todoBody.setAttribute('class','todoBody');
                     joinMeetingButton.textContent= "Join a meeting";
                     meetingSchedule.appendChild(joinMeetingButton);
 
-
+// -- -- Im here ---------
                     // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | BOTTOM: Schedule A Meeting
                     const scheduleMeetingButton = document.createElement ('button');
                     scheduleMeetingButton.setAttribute('class', 'scheduleMeetingButton');
                     scheduleMeetingButton.classList.add('allButtonsHover');
                     scheduleMeetingButton.textContent= "Schedule a meeting";
                     meetingSchedule.appendChild(scheduleMeetingButton);
+                    meetingSchedule.addEventListener ("click", () => {
+                      scheduleAmeeting ();
+                    })
 
 
 
@@ -255,9 +257,6 @@ function whiteBoardFunction () {
           theWhiteboard.setAttribute('class', "theWhiteboard");
           theWhiteboard.style.backgroundImage = 'url("https://i.pinimg.com/736x/46/d8/5c/46d85cc0cdcd655156180e602ded7471.jpg")';
           todoMainRightEmpty.appendChild(theWhiteboard);
-          
-
-
 }
 
 // MY ACCOUNT FUNCTION
@@ -267,6 +266,16 @@ function whiteBoardFunction () {
 // JOIN A MEETING FUNCTION
 
 // SCHEDULE A MEETING FUNCTION
+function scheduleAmeeting () {
+
+    const meetingScheduleEmpty = document.createElement('div');
+    meetingScheduleEmpty.setAttribute('class', 'meetingScheduleEmpty');
+    meetingSchedule.replaceWith(meetingScheduleEmpty);
+
+
+
+}
+
 
 // CALENDAR PREVIOUS BUTTON MEETING
 
