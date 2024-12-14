@@ -370,7 +370,7 @@ function scheduleAmeeting () {
                           console.log("Selected date:", event.target.value);
                         });
 
-                        
+
                         // Form Fields | Time
                         const meetingFormTime = document.createElement('input');
                         meetingFormTime.setAttribute('class', 'meetingFormTime');
@@ -385,6 +385,18 @@ function scheduleAmeeting () {
                         });
 
                         // Form Fields | Meet with Person Name
+                        const meetingFormPersonName = document.createElement('input');
+                        meetingFormPersonName.setAttribute('class', 'meetingFormPersonName');
+                        
+                        meetingFormPersonName.setAttribute("type", "text");
+                        meetingFormPersonName.setAttribute("placeholder", "Person Name");
+                        scheduleFormFieldtForms.appendChild(meetingFormPersonName);
+
+                        meetingFormPersonName.addEventListener("change", (event) => {
+                          const meetingPersonNameValue = event.target.value;
+                          console.log("Selected date:", event.target.value);
+                        });
+
                         // Form Fields | Person Phone Number
                         // Form Fields | Person Phone Email
                         // Form Fields | Meeting Location

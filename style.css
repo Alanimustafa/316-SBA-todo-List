@@ -348,14 +348,16 @@ body {
 }
 
 .scheduleFormFieldtForms {
+  display: block;
   border: solid red 2px;
   background-color: rgb(255, 255, 255);                
-  width: 50%;
+  width: 60%;
   height: 91%;
 }
 
 .meetingFormDate,
-.meetingFormTime {
+.meetingFormTime,
+.meetingFormPersonName {
   color: rgb(0, 132, 255);
   border-color: rgb(0, 132, 255);
   font-size: 15px;
