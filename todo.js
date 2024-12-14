@@ -292,6 +292,7 @@ function scheduleAmeeting () {
               // Schedule a Meeting | Form Container | 1- Form Name 
               const scheduleFormName = document.createElement('div');
               scheduleFormName.setAttribute('class', 'scheduleFormName');
+              scheduleFormName.textContent = "Schedule a meeting";
               scheduleFormContainer.appendChild(scheduleFormName);
                     
 

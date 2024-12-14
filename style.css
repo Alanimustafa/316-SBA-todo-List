@@ -321,4 +321,14 @@ body {
   height: 78%;
   margin-left: 1vw;                
 }
-    
+
+.scheduleFormName {
+  width: 100%;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(0, 132, 255);
+
+}
