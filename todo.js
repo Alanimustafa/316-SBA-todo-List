@@ -234,10 +234,20 @@ todoBody.setAttribute('class','todoBody');
 // WHITEBOARD FUNCTION
 function whiteBoardFunction () {
 
-      // One Cotainer Clear 
-      const whiteoardContainer = document.createElement('div');
-          whiteoardContainer.setAttribute('class', "whiteoardContainer");
-          todoMainRight.replaceWith(whiteoardContainer);
+      // One Cotainer Clear | Has (2) Containers | 1- Home Button | 2- Whiteboard
+      const todoMainRightEmpty = document.createElement('div');
+      todoMainRightEmpty.setAttribute('class', "todoMainRightEmpty");
+      todoMainRight.replaceWith(todoMainRightEmpty);
+
+          // Whiteboard Container | Home Button
+          const whiatboardHomeButton = document.createElement('div');
+          whiatboardHomeButton.setAttribute('class', "whiatboardHomeButton");
+          todoMainRight.replaceWith(whiatboardHomeButton);
+
+          // Whiteboard Container | Whiteboard
+          
+
+
 }
 
 // MY ACCOUNT FUNCTION

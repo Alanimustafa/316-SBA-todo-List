@@ -107,6 +107,16 @@ body {
       justify-content: space-between;
     }
 
+    .todoMainRightEmpty {
+      display: block;
+      margin-left: 1vw;
+      margin-top: 1.5vh;
+      border-radius: 0px 0px 40px 0px;;
+      width: 50.7vw;
+      height: 73vh;
+      background-color: rgb(255, 255, 255);
+    }
+
 
         .mainRightTop {
           display: flex;
