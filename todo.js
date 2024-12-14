@@ -307,8 +307,23 @@ function scheduleAmeeting () {
                     scheduleFormField.appendChild(scheduleFormFieldtheTitles);
 
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Date
+                        const scheduleFormFieldtheDate = document.createElement('div');
+                        scheduleFormFieldtheDate.setAttribute('class', 'scheduleFormFieldtheDate');
+                        scheduleFormFieldtheDate.textContent = "Date :";
+                        scheduleFormFieldtheTitles.appendChild(scheduleFormFieldtheDate);
+
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Time
+                        const scheduleFormFieldtheTime = document.createElement('div');
+                        scheduleFormFieldtheTime.setAttribute('class', 'scheduleFormFieldtheTime');
+                        scheduleFormFieldtheTime.textContent = "Time :";
+                        scheduleFormFieldtheTitles.appendChild(scheduleFormFieldtheTime);
+
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Name
+                        const scheduleFormFieldtheName = document.createElement('div');
+                        scheduleFormFieldtheName.setAttribute('class', 'scheduleFormFieldtheName');
+                        scheduleFormFieldtheName.textContent = "Meet with :";
+                        scheduleFormFieldtheTitles.appendChild(scheduleFormFieldtheName);
+
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Number
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Email
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Meeting Location
