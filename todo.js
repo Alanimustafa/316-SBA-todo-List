@@ -169,13 +169,25 @@ todoBody.setAttribute('class','todoBody');
               const mainRightBottom = document.createElement('div');
               mainRightBottom.setAttribute('class', "mainRightBottom");
               todoMainRight.appendChild(mainRightBottom);
-  
+
+              
 
 
-                // Todo operation | Container 2 | Calendar and Invitations | LEFT | Calendar | Width: 40% - Height: 100%
+                // Todo operation | Container 2 | Calendar and Invitations | LEFT | Next and Previous Buttons | Width: 40% - Height: 100%
                 const theCalendar = document.createElement('div');
                 theCalendar.setAttribute('class', "theCalendar");
                 mainRightBottom.appendChild(theCalendar);
+
+                    // The Calendar | Next Button
+                    const calPreviousButton = document.createElement ('button');
+                    calPreviousButton.setAttribute('class', 'calPreviousButton');
+                    calPreviousButton.classList.add('allButtonsHover');
+                    calPreviousButton.textContent= "Previous";
+                    theCalendar.appendChild(calPreviousButton);
+                    
+
+                  
+                  theCalendar.append(theCalendayFunction());
 
                 // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | Width: 60% - Height: 100%
                 const toDoList = document.createElement('div');
