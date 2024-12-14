@@ -327,11 +327,16 @@ function scheduleAmeeting () {
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Number
                         const scheduleFormFieldPhoneNumber = document.createElement('div');
                         scheduleFormFieldPhoneNumber.setAttribute('class', 'scheduleFormFieldPhoneNumber');
-                        scheduleFormFieldPhoneNumber.textContent = "Meet with :";
+                        scheduleFormFieldPhoneNumber.textContent = "Phone Number :";
                         scheduleFormFieldtheTitles.appendChild(scheduleFormFieldPhoneNumber);
 
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Email
-                        
+                        const scheduleFormFieldEmail = document.createElement('div');
+                        scheduleFormFieldEmail.setAttribute('class', 'scheduleFormFieldEmail');
+                        scheduleFormFieldEmail.textContent = "Email :";
+                        scheduleFormFieldtheTitles.appendChild(scheduleFormFieldEmail);
+
+
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Meeting Location
                         // Schedule a Meeting | Form Container | Form Fields | Fields Names | Text Reminder
 
