@@ -188,7 +188,7 @@ todoBody.setAttribute('class','todoBody');
                           // The Calendar | Previous Button
                           const calPreviousButton = document.createElement ('button');
                           calPreviousButton.setAttribute('class', 'calPreviousButton');
-                          calPreviousButton.classList.add('allButtonsHover');
+                        //   calPreviousButton.classList.add('allButtonsHover');
                           calPreviousButton.textContent= "Previous";
                           calPrevNexContainer.appendChild(calPreviousButton);
 
@@ -196,7 +196,7 @@ todoBody.setAttribute('class','todoBody');
                           // The Calendar | Next Button
                           const calNextButton = document.createElement ('button');
                           calNextButton.setAttribute('class', 'calNextButton');
-                          calNextButton.classList.add('allButtonsHover');
+                         // calNextButton.classList.add('allButtonsHover');
                           calNextButton.textContent= "Next";
                           calPrevNexContainer.appendChild(calNextButton);
                     
@@ -206,7 +206,7 @@ todoBody.setAttribute('class','todoBody');
                       calMonths.setAttribute('class', "calMonths");
                       theCalendar.appendChild(calMonths);
                   
-                  theCalendar.append(theCalendayFunction());
+                 
 
                 // Todo operation | Container 2 | Calendar and Invitations | RIGHT | Todo List | Width: 60% - Height: 100%
                 const toDoList = document.createElement('div');

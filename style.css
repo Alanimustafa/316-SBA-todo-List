@@ -217,7 +217,7 @@ body {
 
                   .calPrevNexContainer {
                     display: flex;
-                    border: solid green 2px;
+                    /* border: solid green 2px; */
                     width: 100%;
                     height: 10%;
                     justify-content: space-between;
@@ -234,13 +234,13 @@ body {
 
                         }
 
-                    .calMonths {
-                      display: flex;
-                      border: solid green 2px;
-                      width: 100%;
-                      height: 88%;
-                      justify-content: space-between;
-                    }
+                  .calMonths {
+                    display: flex;
+                    /* border: solid green 2px; */
+                    width: 100%;
+                    height: 88%;
+                    justify-content: space-between;
+                  }
       
 
             .toDoList {
