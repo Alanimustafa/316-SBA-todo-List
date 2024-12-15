@@ -374,14 +374,163 @@ function whiteBoardFunction () {
 
 // MY ACCOUNT FUNCTION
       function myAccountFunction () {
+
+        // Copying todoMAinRight container 
         const todoMainRight = document.getElementById ("todoMainRightEmpty");
-        
         const myAccountSubContainer = todoMainRight.cloneNode();
-        myAccountSubContainer.style.backgroundColor = "rgb(255, 255, 255)";
+        myAccountSubContainer.style.backgroundColor = "rgb(255, 254, 250)";
         myAccountSubContainer.style.border = "solid orange 3px";
         todoMainRight.replaceWith(myAccountSubContainer);
-        //todoMainRight.replaceWith(myAccountSubContainer);
+
+        // Adding the back button 
+        const myAccountButton = document.createElement ('button');
+        myAccountButton.setAttribute('class', 'myAccountButton');
+        myAccountButton.textContent= "< Back";
+        myAccountSubContainer.appendChild(myAccountButton);
+
+            // The Click Event Listener to Go Back To The Home Page
+            myAccountButton.addEventListener("click", () => {
+              myAccountSubContainer.replaceWith(todoMainRight);
+            })
+
+        // Adding the Login Container to My account Empty Container
+        const myAccountLogin = document.querySelector('.myAccountLogin');
+        myAccountLogin.innerText ="User Account";
+        myAccountSubContainer.appendChild(myAccountLogin);
+
+        // Login Container - Style
+        myAccountLogin.style.display ="block";
+        myAccountLogin.style.border= "double orange 2px";
+        myAccountLogin.style.width=  "35%";
+        myAccountLogin.style.height= "70%";
+        myAccountLogin.style.justifySelf= "center";
+        myAccountLogin.style.margin= "5%";
+        myAccountLogin.style.backgroundImage= "linear-gradient(rgb(235, 249, 253), rgb(230, 230, 255))";
+        myAccountLogin.style.color= "rgb(0, 132, 255)";
+        myAccountLogin.style.boxshadow= "lightgray 5px 5px 5px";
+
+        // Adding LoginUsername Div
+          // Adding LoginUsername | Title
+          const userNameTitle = document.querySelector('.userNameTitle');
+          userNameTitle.textContent ="Username";
+          userNameTitle.style.marginTop="15%";
+          userNameTitle.style.marginLeft="10%";
+          userNameTitle.style.width="50%";
+          userNameTitle.style.height="5%";
+          myAccountLogin.appendChild(userNameTitle);
+          
+          // Adding LoginUsername | Input Field
+          const userNameForm = document.createElement('input');
+          userNameForm.type="text";
+          userNameForm.setAttribute("class", "userNameForm");
+          userNameForm.placeholder ="Username";
+          userNameForm.style.marginTop="5%";
+          userNameForm.style.marginLeft="10%";
+          userNameForm.style.width="75%";
+          userNameForm.style.height="25px";
+          userNameForm.required = true ;
+          myAccountLogin.appendChild(userNameForm);
+            // Username form Activation
+            userNameForm.addEventListener("change", () => {
+              const userNameFormValue = userNameForm.value;
+              console.log(userNameFormValue);
+              if (!userNameFormValue) {
+                alert ("Username can not be empty");
+              } else {
+                console.log("Username is :", userNameFormValue);
+              }
+            })
+
+          // Adding LoginPassword | Forgot Username
+          const userForgetUsername = document.querySelector('.userForgetUsername');
+          userForgetUsername.textContent ="Forgot Username?";
+          userForgetUsername.style.marginLeft="45%";
+          userForgetUsername.style.fontSize = "12px";
+          userForgetUsername.style.color = "rgb(0, 132, 255)";
+          myAccountLogin.appendChild(userForgetUsername);
+          
+
         
+          // Adding LoginPassword Div
+          // Adding LoginPassword | Title
+          const userPassword = document.querySelector('.userPassword');
+          userPassword.textContent ="Password";
+          userPassword.style.marginTop="10%";
+          userPassword.style.marginLeft="10%";
+          userPassword.style.width="50%";
+          userPassword.style.height="5%";
+          myAccountLogin.appendChild(userPassword);
+          
+          // Adding LoginPassword | Input Field
+          const passwordForm = document.createElement('input');
+          passwordForm.type="password";
+          passwordForm.setAttribute("class", "passwordForm");
+          passwordForm.placeholder ="Password";
+          passwordForm.style.marginTop="5%";
+          passwordForm.style.marginLeft="10%";
+          passwordForm.style.width="75%";
+          passwordForm.style.height="25px";
+          myAccountLogin.appendChild(passwordForm);
+            // Activate the Password Field
+            passwordForm.addEventListener("submit", (event) => {
+              const passwordFormValue = passwordForm.value;
+              passwordFormValue.required = true;
+              console.log(passwordFormValue);
+              if (!passwordFormValue) {
+                prompt ("Invalid Password. Please enter your password and press OK. ");
+              } else {
+                console.log("Password is :", passwordFormValue);
+                
+              }
+              return passwordFormValue;
+            })
+
+
+
+          // Adding LoginPassword | Forgot Password
+          const userForgetPassword = document.querySelector('.userForgetPassword');
+          userForgetPassword.textContent ="Forgot assword?";
+          userForgetPassword.style.marginLeft="50%";
+          userForgetPassword.style.fontSize = "12px";
+          userForgetPassword.style.color = "rgb(0, 132, 255)";
+          myAccountLogin.appendChild(userForgetPassword);
+
+
+          // Adding the Login Button
+          const loginButton = document.createElement('button');
+          loginButton.setAttribute("class", "loginButton");
+          loginButton.textContent = "Login"
+          loginButton.style.marginTop="18%";
+          loginButton.style.marginLeft="25%";
+          loginButton.style.width="45%";
+          loginButton.style.height="auto";
+          loginButton.style.justifySelf ="center";
+          loginButton.style.border = "solid rgb(0, 132, 255) 1px";
+          loginButton.style.borderRadius = "5px"
+          loginButton.style.color = "rgb(0, 132, 255)";
+          loginButton.style.cursor = "pointer";
+          myAccountLogin.appendChild(loginButton);
+          // Activating the Login Button
+          loginButton.addEventListener("click", (event) => {
+            let usernameValue = passwordForm.value;
+            let passwordValue = userNameForm.value;
+            if ((!usernameValue) || (!passwordValue)) {
+              alert("No Username and/or Password");
+            } else {
+              myAccountSubContainer.replaceWith(todoMainRight);
+            }
+          })
+
+        
+
+          // Adding Create an account link
+          const createanAccount = document.querySelector('.createanAccount');
+          createanAccount.textContent ="Create an account";
+          createanAccount.style.marginLeft="30%";
+          createanAccount.style.marginTop="20%";
+          createanAccount.style.fontSize = "12px";
+          createanAccount.style.color = "rgb(0, 132, 255)";
+          myAccountLogin.appendChild(createanAccount);
       }
 
 // START A MEETING FUNCTION
