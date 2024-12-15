@@ -81,12 +81,16 @@ todoBody.setAttribute('class','todoBody');
               buttonsMainLeft.appendChild(myAccountContainer);
 
                     // Todo Buttons | Button | My Account | Width 100% - Height: 50%
+
                     const myAccountButton = document.querySelector ('.myAccountButton');
 
                     myAccountButton.classList.add('allButtonsHover');
                     myAccountButton.textContent= "My account";
                     myAccountButton.style.color= "darkRed";
                     myAccountContainer.appendChild(myAccountButton);
+                    myAccountContainer.addEventListener('click', () => {
+                      myAccountFunction();
+                    })
 
             
 
@@ -95,6 +99,7 @@ todoBody.setAttribute('class','todoBody');
           // DONE -Todo Main Operation | RIGHT | Width: 75% - Height: 100% | Has (2) Sub Containers | TOP: Greetings and Schedule | BOTTOM: Calendar and Invitations
           const todoMainRight = document.createElement('div');
           todoMainRight.setAttribute('class', "todoMainRight");
+          todoMainRight.id ="todoMainRightEmpty";
           todoMainBottom.appendChild(todoMainRight);
 
     
@@ -346,6 +351,7 @@ function whiteBoardFunction () {
       // One Cotainer Clear | Has (2) Containers | 1- Home Button | 2- Whiteboard
       const todoMainRightEmpty = document.createElement('div');
       todoMainRightEmpty.setAttribute('class', "todoMainRightEmpty");
+      
       todoMainRight.replaceWith(todoMainRightEmpty);
 
           // Whiteboard Container | Home Button
@@ -367,6 +373,16 @@ function whiteBoardFunction () {
 }
 
 // MY ACCOUNT FUNCTION
+      function myAccountFunction () {
+        const todoMainRight = document.getElementById ("todoMainRightEmpty");
+        
+        const myAccountSubContainer = todoMainRight.cloneNode();
+        myAccountSubContainer.style.backgroundColor = "rgb(255, 255, 255)";
+        myAccountSubContainer.style.border = "solid orange 3px";
+        todoMainRight.replaceWith(myAccountSubContainer);
+        //todoMainRight.replaceWith(myAccountSubContainer);
+        
+      }
 
 // START A MEETING FUNCTION
 
