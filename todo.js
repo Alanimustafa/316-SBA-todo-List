@@ -81,8 +81,8 @@ todoBody.setAttribute('class','todoBody');
               buttonsMainLeft.appendChild(myAccountContainer);
 
                     // Todo Buttons | Button | My Account | Width 100% - Height: 50%
-                    const myAccountButton = document.createElement ('button');
-                    myAccountButton.setAttribute('class', 'myAccountButton');
+                    const myAccountButton = document.querySelector ('.myAccountButton');
+
                     myAccountButton.classList.add('allButtonsHover');
                     myAccountButton.textContent= "My account";
                     myAccountButton.style.color= "darkRed";
