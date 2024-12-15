@@ -138,7 +138,10 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda contents| Width: 100% - Height: 90%
                         const agendaContents = document.createElement('div');
                         agendaContents.setAttribute('class', 'agendaContents');
-                        agendaContents.textContent = "The agenda contents";
+                        agendaContents.style.backgroundImage = "url(./images/AgendaScreenShot.JPG)";
+                        agendaContents.style.backgroundSize = "98%";
+                        agendaContents.style.backgroundPosition = "center";
+                        // agendaContents.textContent = "The agenda contents";
                         todayAgenda.appendChild(agendaContents);
 
 
@@ -291,6 +294,7 @@ function theCalendarFunction () {
   const calendarBackButton = document.createElement ('button');
   calendarBackButton.setAttribute('class', 'calendarBackButton');
   calendarBackButton.textContent= "< Back";
+  calendarBackButton.style.paddingLeft = "1em";
   calendarContainer.appendChild(calendarBackButton);
   calendarBackButton.addEventListener("click", () => {
     calendarContainer.replaceWith(todoMainRight);
@@ -299,6 +303,8 @@ function theCalendarFunction () {
   // Adding the year Callendar
   const calendarSubContainer = document.createElement('div');
   calendarSubContainer.setAttribute("class", "calendarSubContainer");
+  calendarSubContainer.style.backgroundImage = 'url(./images/2024-Calendar.jpg)';
+  calendarSubContainer.style.backgroundSize = "cover";
   calendarContainer.appendChild(calendarSubContainer);
 
 }
