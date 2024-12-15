@@ -128,7 +128,7 @@ todoBody.setAttribute('class','todoBody');
                         // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda Text| Width: 100% - Height: 10%
                         const theAgendaText = document.createElement('div');
                         theAgendaText.setAttribute('class', 'theAgendaText');
-                        theAgendaText.textContent = "Your agenda today:";
+                        theAgendaText.textContent = "Your agenda:";
                         todayAgenda.appendChild(theAgendaText);
 
                         // Todo Operation | Container 1 | BOTTOM | Greeting and Scheduel | The Agenda | Today Agenda contents| Width: 100% - Height: 90%
@@ -186,11 +186,34 @@ todoBody.setAttribute('class','todoBody');
                 theCalendar.setAttribute('class', "theCalendar");
                 mainRightBottom.appendChild(theCalendar);
 
+                      // The Calendar Months
+                      const yearCalendar = [
+                        'url(./images/01-JAN.png)',
+                        'url(./images/02-FEB.png)',
+                        'url(./images/03-MAR.png)',
+                        'url(./images/04-APR.png)',
+                        'url(./images/05-MAY.png)',
+                        'url(./images/06-JUN.png)',
+                        'url(./images/07-JUL.png)',
+                        'url(./images/08-AUG.png)',
+                        'url(./images/09-SEP.png)',
+                        'url(./images/10-OCT.png)',
+                        'url(./images/11-NOV.png)',
+                        'url(./images/12-DEC.png)',
+                      ]
+
+                      
+                      // Months Array Index
+                      let month = 0;
+                      function monthsCounter () {
+                        calMonths.style.backgroundImage = yearCalendar[month];
+                      }
+
                       // Todo operation | Container 2 | Calendar and Invitations | LEFT | Next and Previous Buttons Container | Height 10% - Width 100%
                       const calPrevNexContainer = document.createElement('div');
                       calPrevNexContainer.setAttribute('class', "calPrevNexContainer");
                       theCalendar.appendChild(calPrevNexContainer);
-      
+                            
                       
 
                           // The Calendar | Previous Button
@@ -199,6 +222,10 @@ todoBody.setAttribute('class','todoBody');
                           // calPreviousButton.classList.add('allButtonsHover');
                           calPreviousButton.textContent= "Previous";
                           calPrevNexContainer.appendChild(calPreviousButton);
+                          calPreviousButton.addEventListener ("click", () => {
+                            month = (month - 1 + yearCalendar.length) % yearCalendar.length;
+                            monthsCounter();
+                          })
 
 
                           // The Calendar | Next Button
@@ -207,11 +234,15 @@ todoBody.setAttribute('class','todoBody');
                           // calNextButton.classList.add('allButtonsHover');
                           calNextButton.textContent= "Next";
                           calPrevNexContainer.appendChild(calNextButton);
-                    
+                          calNextButton.addEventListener ("click", () => {
+                            month = (month + 1) % yearCalendar.length;
+                            monthsCounter();
+                          })
 
                       // Todo operation | Container 2 | Calendar and Invitations | LEFT | Calendar Months | Height 90% - Width 100%
                       const calMonths = document.createElement('div');
                       calMonths.setAttribute('class', "calMonths");
+                      calMonths.style.backgroundImage = yearCalendar[11]; // The default Month
                       theCalendar.appendChild(calMonths);
                   
                  
@@ -428,14 +459,17 @@ function scheduleAmeeting () {
                         meetingFormPersonPhone.addEventListener("change", (event) => {
                           
                           const meetingPersonPhoneValue = event.target.value;
-
+                          
                           if (meetingPersonPhoneValue.replace(/[^0-9]/g, '')) {
-                            console.log("Phone No. :", event.target.value);
+                            const meetingFormPersonPhone = event.target.value;
+                                return meetingFormPersonPhone;
                           } else {
-                            
                             alert("invalid Phone Number");
                           }
-                        });
+                        } 
+                      );
+
+                        
 
 
                         // Form Fields | Person Email
@@ -452,21 +486,28 @@ function scheduleAmeeting () {
                           const meetingFormPersonEmail = event.target.value;
 
                               if (meetingFormPersonEmail.includes('@')) {
-                                console.log("Email :", event.target.value);
+                                const meetingFormPersonEmail = event.target.value;
+                                return meetingFormPersonEmail;
                               } else {
                                 alert("invalid Email Address");
                               }
                         });
 
-
+// ------------------ I'm here--------------
                         // Form Fields | Meeting Subject
                         const meetingFormMeetingSubject = document.createElement('input');
                         meetingFormMeetingSubject.setAttribute('class', 'meetingFormMeetingSubject');
-                        
                         meetingFormMeetingSubject.setAttribute("type", "text");
                         meetingFormMeetingSubject.style.width = "98%";
                         meetingFormMeetingSubject.setAttribute("placeholder", "Meeting Subject");
                         scheduleFormFieldtForms.appendChild(meetingFormMeetingSubject);
+
+                        meetingFormMeetingSubject.addEventListener("change", (event) => {
+                          //event.preventDefault();
+                          const meetingFormMeetingSubject = event.target.value;
+
+                          return meetingFormMeetingSubject;
+                        });
 
                         // Form Fields | Text Reminder
                         const meetingFormTextReminder = document.createElement('input');
@@ -486,7 +527,6 @@ function scheduleAmeeting () {
                             // Label text
                             const reminderLabel = document.createElement('p');
                             reminderLabel.setAttribute('class', "reminderLabel")
-                            // reminderLabel.htmlFor('meetingFormTextReminder');
                             reminderLabel.textContent ="Send me a text reminder";
                             reminderLabel.style.display = "inline";
                             reminderLabel.style.marginLeft = "0.5vw";
@@ -526,7 +566,8 @@ function scheduleAmeeting () {
                           // Submiting the Meeting to the table.
                           const upcomingMeeting = document.createElement('li');
                           upcomingMeeting.setAttribute('class', "upcomingMeeting");
-                          upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${(meetingFormPersonName.value)}.`;
+                          upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${meetingFormPersonName.value}.`;
+                          
                           upcomingMeetingTableRowCell1.appendChild(upcomingMeeting);
 
                           // Meeting Details Button
@@ -539,145 +580,153 @@ function scheduleAmeeting () {
                           // Meeting Details Button Function
                           meetingDetails.addEventListener('click', (event) => {
 
-                            postMeetingDetails (event);
+                            // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+
+
+                      // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+                      const quickNotesTableContainer = document.createElement('div');
+                      quickNotesTableContainer.setAttribute('class', 'quickNotesTableContainer');
+                      agendaContents.replaceWith(quickNotesTableContainer);
+
+                      
+
+                          // Quick Notes Table
+                          const quickNotesTable = document.createElement('table');
+                          quickNotesTable.setAttribute('class', "quickNotesTable");
+                          // quickNotesTable.textContent = "I'm here";
+                          quickNotesTableContainer.append(quickNotesTable);
+
+
+
+                            // Quick Notes Table | Row 1
+                            const quickNotesTableRow1 = document.createElement('tr');
+                            quickNotesTableRow1.setAttribute('class', "quickNotesTableRow1");
+                            quickNotesTable.append(quickNotesTableRow1);
+
+                                // Quick Notes Table | Row 1 | Cell 1
+                                const quickNotesTableRow1Cell1 = document.createElement('td');
+                                quickNotesTableRow1Cell1.setAttribute('class', "quickNotesTableRow1Cell1");
+                                quickNotesTableRow1Cell1.textContent = "Name"
+                                quickNotesTableRow1.append(quickNotesTableRow1Cell1);
+                        
+                                
+                                // Quick Notes Table | Row 1 | Cell 2
+                                const quickNotesTableRow1Cell2 = document.createElement('td');
+                                quickNotesTableRow1Cell2.setAttribute('class', "quickNotesTableRow1Cell2");
+                                quickNotesTableRow1Cell2.textContent = meetingFormPersonName.value;
+                                quickNotesTableRow1.append(quickNotesTableRow1Cell2);
+
+                                // Quick Notes Table | Row 1 | Cell 3
+                                const quickNotesTableRow1Cell3 = document.createElement('td');
+                                quickNotesTableRow1Cell3.setAttribute('class', "quickNotesTableRow1Cell3");
+                                quickNotesTableRow1Cell3.textContent = "Subject"
+                                quickNotesTableRow1.append(quickNotesTableRow1Cell3);
+
+                                // Quick Notes Table | Row 1 | Cell 4
+                                const quickNotesTableRow1Cell4 = document.createElement('td');
+                                quickNotesTableRow1Cell4.setAttribute('class', "quickNotesTableRow1Cell4");
+                                quickNotesTableRow1Cell4.textContent= meetingFormMeetingSubject.value;
+                                //  = meetingSubject;
+                                
+                                quickNotesTableRow1.append(quickNotesTableRow1Cell4);
+
+
+
+                            // Quick Notes Table | Row 2
+                            const quickNotesTableRow2 = document.createElement('tr');
+                            quickNotesTableRow2.setAttribute('class', "quickNotesTableRow2");
+                            quickNotesTable.append(quickNotesTableRow2);
+
+                                // Quick Notes Table | Row 2 | Cell 1
+                                const quickNotesTableRow2Cell1 = document.createElement('td');
+                                quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
+                                quickNotesTableRow2Cell1.textContent ="Date"
+                                quickNotesTableRow2.append(quickNotesTableRow2Cell1);
+// ---------------- Date -----------
+                                // Quick Notes Table | Row 2 | Cell 2
+                                const quickNotesTableRow2Cell2 = document.createElement('td');
+                                quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
+                                quickNotesTableRow2Cell2.textContent = meetingFormDate.value ;
+                                quickNotesTableRow2.append(quickNotesTableRow2Cell2);
+
+                                // Quick Notes Table | Row 2 | Cell 3
+                                const quickNotesTableRow2Cell3 = document.createElement('td');
+                                quickNotesTableRow2Cell3.setAttribute('class', "quickNotesTableRow2Cell3");
+                                quickNotesTableRow2Cell3.textContent = "Time";
+                                quickNotesTableRow2.append(quickNotesTableRow2Cell3);
+
+                                // Quick Notes Table | Row 2 | Cell 4
+                                const quickNotesTableRow2Cell4 = document.createElement('td');
+                                quickNotesTableRow2Cell4.setAttribute('class', "quickNotesTableRow2Cell4");
+                                quickNotesTableRow2Cell4.textContent = meetingFormTime.value;
+                                quickNotesTableRow2.append(quickNotesTableRow2Cell4);
+
+
+
+                            // Quick Notes Table | Row 3
+                            const quickNotesTableRow3 = document.createElement('tr');
+                            quickNotesTableRow3.setAttribute('class', "quickNotesTableRow3");
+                            quickNotesTable.append(quickNotesTableRow3);
+
+                                // Quick Notes Table | Row 3 | Cell 1
+                                const quickNotesTableRow3Cell1 = document.createElement('td');
+                                quickNotesTableRow3Cell1.setAttribute('class', "quickNotesTableRow3Cell1");
+                                quickNotesTableRow3Cell1.textContent ="Phone"
+                                quickNotesTableRow3.append(quickNotesTableRow3Cell1);
+
+                                // Quick Notes Table | Row 3 | Cell 2
+                                const quickNotesTableRow3Cell2 = document.createElement('td');
+                                quickNotesTableRow3Cell2.setAttribute('class', "quickNotesTableRow3Cell2");
+                                quickNotesTableRow3Cell2.textContent = meetingFormPersonPhone.value;
+                                quickNotesTableRow3.append(quickNotesTableRow3Cell2);
+
+                                // Quick Notes Table | Row 3 | Cell 3
+                                const quickNotesTableRow3Cell3 = document.createElement('td');
+                                quickNotesTableRow3Cell3.setAttribute('class', "quickNotesTableRow3Cell3");
+                                quickNotesTableRow3Cell3.textContent= "Email";
+                                quickNotesTableRow3.append(quickNotesTableRow3Cell3);
+
+                                // Quick Notes Table | Row 3 | Cell 4
+                                const quickNotesTableRow3Cell4 = document.createElement('td');
+                                quickNotesTableRow3Cell4.setAttribute('class', "quickNotesTableRow3Cell4");
+                                quickNotesTableRow3Cell4.textContent = meetingFormPersonEmail.value ;
+                                quickNotesTableRow3.append(quickNotesTableRow3Cell4);
+
+
+
+                      // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule | 2- Cancel
+                      const quickNotesOPButtons = document.createElement('div');
+                      quickNotesOPButtons.setAttribute('class', 'quickNotesOPButtons');
+                      quickNotesTableContainer.appendChild(quickNotesOPButtons);
+
+
+                          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule
+                          const quickNotesMeetingREscheduleButton = document.createElement ('button');
+                          quickNotesMeetingREscheduleButton.setAttribute('class', 'quickNotesMeetingREscheduleButton');
+                          quickNotesMeetingREscheduleButton.textContent= "Reschedule";
+                          quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
+                          quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
+                          quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
+                          
+                          
+                          
+                          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 2- Cancel
+                          const quickNotesMeetingCancelButton = document.createElement ('button');
+                          quickNotesMeetingCancelButton.setAttribute('class', 'quickNotesMeetingCancelButton');
+                          quickNotesMeetingCancelButton.textContent= "Cancel";
+                          quickNotesMeetingCancelButton.classList.add('allButtonsHover');
+                          quickNotesMeetingCancelButton.style.color = "darkred";
+                          quickNotesMeetingCancelButton.style.marginLeft = "30%";
+                          quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
+
                           })
 
                         })
 }
 
-function postMeetingDetails () {
+function postMeetingDetails (meetingFormPersonName) {
 
-  // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
-
-
-      // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
-      const quickNotesTableContainer = document.createElement('div');
-      quickNotesTableContainer.setAttribute('class', 'quickNotesTableContainer');
-      agendaContents.replaceWith(quickNotesTableContainer);
-
-      
-
-          // Quick Notes Table
-          const quickNotesTable = document.createElement('table');
-          quickNotesTable.setAttribute('class', "quickNotesTable");
-          // quickNotesTable.textContent = "I'm here";
-          quickNotesTableContainer.append(quickNotesTable);
-
-
-
-            // Quick Notes Table | Row 1
-            const quickNotesTableRow1 = document.createElement('tr');
-            quickNotesTableRow1.setAttribute('class', "quickNotesTableRow1");
-            quickNotesTable.append(quickNotesTableRow1);
-
-                // Quick Notes Table | Row 1 | Cell 1
-                const quickNotesTableRow1Cell1 = document.createElement('td');
-                quickNotesTableRow1Cell1.setAttribute('class', "quickNotesTableRow1Cell1");
-                quickNotesTableRow1Cell1.textContent = "Name"
-                quickNotesTableRow1.append(quickNotesTableRow1Cell1);
-        
-                
-                // Quick Notes Table | Row 1 | Cell 2
-                const quickNotesTableRow1Cell2 = document.createElement('td');
-                quickNotesTableRow1Cell2.setAttribute('class', "quickNotesTableRow1Cell2");
-                quickNotesTableRow1.append(quickNotesTableRow1Cell2);
-
-                // Quick Notes Table | Row 1 | Cell 3
-                const quickNotesTableRow1Cell3 = document.createElement('td');
-                quickNotesTableRow1Cell3.setAttribute('class', "quickNotesTableRow1Cell3");
-                quickNotesTableRow1Cell3.textContent = "Subject"
-                quickNotesTableRow1.append(quickNotesTableRow1Cell3);
-
-                // Quick Notes Table | Row 1 | Cell 4
-                const quickNotesTableRow1Cell4 = document.createElement('td');
-                quickNotesTableRow1Cell4.setAttribute('class', "quickNotesTableRow1Cell4");
-                quickNotesTableRow1.append(quickNotesTableRow1Cell4);
-
-
-
-            // Quick Notes Table | Row 2
-            const quickNotesTableRow2 = document.createElement('tr');
-            quickNotesTableRow2.setAttribute('class', "quickNotesTableRow2");
-            quickNotesTable.append(quickNotesTableRow2);
-
-                // Quick Notes Table | Row 2 | Cell 1
-                const quickNotesTableRow2Cell1 = document.createElement('td');
-                quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
-                quickNotesTableRow2Cell1.textContent ="Date"
-                quickNotesTableRow2.append(quickNotesTableRow2Cell1);
-
-                // Quick Notes Table | Row 2 | Cell 2
-                const quickNotesTableRow2Cell2 = document.createElement('td');
-                quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
-                quickNotesTableRow2.append(quickNotesTableRow2Cell2);
-
-                // Quick Notes Table | Row 2 | Cell 3
-                const quickNotesTableRow2Cell3 = document.createElement('td');
-                quickNotesTableRow2Cell3.setAttribute('class', "quickNotesTableRow2Cell3");
-                quickNotesTableRow2Cell3.textContent = "Time";
-                quickNotesTableRow2.append(quickNotesTableRow2Cell3);
-
-                // Quick Notes Table | Row 2 | Cell 4
-                const quickNotesTableRow2Cell4 = document.createElement('td');
-                quickNotesTableRow2Cell4.setAttribute('class', "quickNotesTableRow2Cell4");
-                quickNotesTableRow2.append(quickNotesTableRow2Cell4);
-
-
-
-            // Quick Notes Table | Row 3
-            const quickNotesTableRow3 = document.createElement('tr');
-            quickNotesTableRow3.setAttribute('class', "quickNotesTableRow3");
-            quickNotesTable.append(quickNotesTableRow3);
-
-                // Quick Notes Table | Row 3 | Cell 1
-                const quickNotesTableRow3Cell1 = document.createElement('td');
-                quickNotesTableRow3Cell1.setAttribute('class', "quickNotesTableRow3Cell1");
-                quickNotesTableRow3Cell1.textContent ="Phone"
-                quickNotesTableRow3.append(quickNotesTableRow3Cell1);
-
-                // Quick Notes Table | Row 3 | Cell 2
-                const quickNotesTableRow3Cell2 = document.createElement('td');
-                quickNotesTableRow3Cell2.setAttribute('class', "quickNotesTableRow3Cell2");
-                quickNotesTableRow3.append(quickNotesTableRow3Cell2);
-
-                // Quick Notes Table | Row 3 | Cell 3
-                const quickNotesTableRow3Cell3 = document.createElement('td');
-                quickNotesTableRow3Cell3.setAttribute('class', "quickNotesTableRow3Cell3");
-                quickNotesTableRow3Cell3.textContent= "Email";
-                quickNotesTableRow3.append(quickNotesTableRow3Cell3);
-
-                // Quick Notes Table | Row 3 | Cell 4
-                const quickNotesTableRow3Cell4 = document.createElement('td');
-                quickNotesTableRow3Cell4.setAttribute('class', "quickNotesTableRow3Cell4");
-                quickNotesTableRow3.append(quickNotesTableRow3Cell4);
-
-
-
-      // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule | 2- Cancel
-      const quickNotesOPButtons = document.createElement('div');
-      quickNotesOPButtons.setAttribute('class', 'quickNotesOPButtons');
-      quickNotesTableContainer.appendChild(quickNotesOPButtons);
-
-
-          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule
-          const quickNotesMeetingREscheduleButton = document.createElement ('button');
-          quickNotesMeetingREscheduleButton.setAttribute('class', 'quickNotesMeetingREscheduleButton');
-          quickNotesMeetingREscheduleButton.textContent= "Reschedule";
-          quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
-          quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
-          quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
-          
-          
-          
-          // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 2- Cancel
-          const quickNotesMeetingCancelButton = document.createElement ('button');
-          quickNotesMeetingCancelButton.setAttribute('class', 'quickNotesMeetingCancelButton');
-          quickNotesMeetingCancelButton.textContent= "Cancel";
-          quickNotesMeetingCancelButton.classList.add('allButtonsHover');
-          quickNotesMeetingCancelButton.style.color = "darkred";
-          quickNotesMeetingCancelButton.style.marginLeft = "30%";
-          quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
-
+  
 
 
 

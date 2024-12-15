@@ -255,10 +255,11 @@ body {
 
                   .calMonths {
                     display: flex;
-                    /* border: solid green 2px; */
-                    width: 100%;
+                    justify-self: center;
+                    width: 80%;
                     height: 88%;
-                    justify-content: space-between;
+                    background-size: cover;
+                    
                   }
       
 
@@ -443,16 +444,15 @@ body {
 
 
 .quickNotesTableContainer{
-border: solid orange 2px;
-height: 80%;;
+height: 80%;
 }
 
 
 .quickNotesTable {
-  border: solid red 2px;
+  border: solid lightblue 2px;
   width: 100%;
   height: 65%;
-
+  padding-top: 0.5vh;
 }
 
 .quickNotesTableRow1,
@@ -473,7 +473,6 @@ height: 80%;;
 .quickNotesTableRow4Cell1,
 .quickNotesTableRow4Cell3 
 { 
-  border: solid blue 2px;
   width: 3vw;
   height: 20%;
   font-size: 15px;
@@ -482,10 +481,24 @@ height: 80%;;
 
 }
 
+.quickNotesTableRow1Cell2,
+.quickNotesTableRow1Cell4,
+.quickNotesTableRow2Cell2,
+.quickNotesTableRow2Cell4,
+.quickNotesTableRow3Cell2,
+.quickNotesTableRow3Cell4
+{ 
+  width: 3vw;
+  height: 20%;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(0, 132, 255);
+
+}
+
 .quickNotesOPButtons {
   display: flex;
   flex-wrap:nowrap;
-  border: solid purple 2px;
   height: 30%;
 
 }
