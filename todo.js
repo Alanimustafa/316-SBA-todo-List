@@ -45,7 +45,18 @@ todoBody.setAttribute('class','todoBody');
                     homeCalendarButton.classList.add('allButtonsHover');
                     homeCalendarButton.textContent= "Calendar";
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
+                    homeCalendarButton.addEventListener ("click" , () => {
+                      const calendarContainer = document.createElement('div');
+                      calendarContainer.setAttribute("class", "calendarContainer");
+                      todoMainRight.replaceWith(calendarContainer);
 
+                      // Adding the year Callendar
+                      const calendarSubContainer = document.createElement('div');
+                      calendarSubContainer.setAttribute("class", "calendarSubContainer");
+                      todoMainRight.appendChild(calendarSubContainer);
+
+                    });
+// ----- Add months -------------------------
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
                     const homeContactsButton = document.createElement ('button');
                     homeContactsButton.setAttribute('class', 'homeContactsButton');
