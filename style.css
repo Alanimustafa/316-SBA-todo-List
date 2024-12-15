@@ -66,7 +66,8 @@ body {
                 .homeCalendarButton,
                 .homeContactsButton,
                 .homeWhiteboardButton,
-                .myAccountButton {
+                .myAccountButton,
+                .calendarBackButton {
                   width: 14vw;
                   height: 5vh;
                   background: none;
@@ -126,7 +127,7 @@ body {
       border-radius: 0px 0px 40px 0px;;
       width: 50.7vw;
       height: 73vh;
-      background-color: navajowhite;
+      background-color:none;
     }
 
     .monthSubcalendarContainer {

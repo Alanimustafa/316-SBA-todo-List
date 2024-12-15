@@ -46,14 +46,7 @@ todoBody.setAttribute('class','todoBody');
                     homeCalendarButton.textContent= "Calendar";
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
                     homeCalendarButton.addEventListener ("click" , () => {
-                      const calendarContainer = document.createElement('div');
-                      calendarContainer.setAttribute("class", "calendarContainer");
-                      todoMainRight.replaceWith(calendarContainer);
-
-                      // Adding the year Callendar
-                      const calendarSubContainer = document.createElement('div');
-                      calendarSubContainer.setAttribute("class", "calendarSubContainer");
-                      todoMainRight.appendChild(calendarSubContainer);
+                      theCalendarFunction ();
 
                     });
 // ----- Add months -------------------------
@@ -289,6 +282,26 @@ todoBody.setAttribute('class','todoBody');
 // HOME BUTTON FUNCTION
 
 // CALENDAR FUNCTION
+
+function theCalendarFunction () {
+  const calendarContainer = document.createElement('div');
+  calendarContainer.setAttribute("class", "calendarContainer");
+  todoMainRight.replaceWith(calendarContainer);
+
+  const calendarBackButton = document.createElement ('button');
+  calendarBackButton.setAttribute('class', 'calendarBackButton');
+  calendarBackButton.textContent= "< Back";
+  calendarContainer.appendChild(calendarBackButton);
+  calendarBackButton.addEventListener("click", () => {
+    calendarContainer.replaceWith(todoMainRight);
+  })
+
+  // Adding the year Callendar
+  const calendarSubContainer = document.createElement('div');
+  calendarSubContainer.setAttribute("class", "calendarSubContainer");
+  calendarContainer.appendChild(calendarSubContainer);
+
+}
 
 // CONTACTS FUNCTION
 
