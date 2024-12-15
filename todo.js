@@ -47,15 +47,19 @@ todoBody.setAttribute('class','todoBody');
                     homeButtonsTopLeft.appendChild(homeCalendarButton);
                     homeCalendarButton.addEventListener ("click" , () => {
                       theCalendarFunction ();
-
                     });
-// ----- Add months -------------------------
+
                     // Todo Operation | Buttons | 3 | Contacts | Width: 80% - Height: 90%
                     const homeContactsButton = document.createElement ('button');
                     homeContactsButton.setAttribute('class', 'homeContactsButton');
                     homeContactsButton.classList.add('allButtonsHover');
                     homeContactsButton.textContent= "Contacts";
                     homeButtonsTopLeft.appendChild(homeContactsButton);
+                    homeContactsButton.addEventListener ("click" , () => {
+                      theContactsFunction ();
+                    });
+
+
 
                     // Todo Operation | Buttons | 4 | Whiteboard | Width: 80% - Height: 90%
                     const homeWhiteboardButton = document.createElement ('button');
@@ -310,6 +314,31 @@ function theCalendarFunction () {
 }
 
 // CONTACTS FUNCTION
+ function theContactsFunction () {
+  const contactsContainer = document.createElement('div');
+  contactsContainer.setAttribute("class", "contactsContainer");
+  todoMainRight.replaceWith(contactsContainer);
+
+  const contactsBackButton = document.createElement ('button');
+  contactsBackButton.setAttribute('class', 'contactsBackButton');
+  contactsBackButton.textContent= "< Back";
+  contactsBackButton.style.paddingLeft = "1em";
+  contactsContainer.appendChild(contactsBackButton);
+  contactsBackButton.addEventListener("click", () => {
+      contactsContainer.replaceWith(todoMainRight);
+  })
+
+  // Adding Contact list
+  const contacsSubContainer = document.createElement('div');
+  contacsSubContainer.setAttribute("class", "contacsSubContainer");
+  contacsSubContainer.style.backgroundImage = 'url(./images/contactListImage.png)';
+  contacsSubContainer.style.backgroundSize = "cover";
+  contactsContainer.appendChild(contacsSubContainer);
+
+ };
+
+
+
 
 // WHITEBOARD FUNCTION
 function whiteBoardFunction () {

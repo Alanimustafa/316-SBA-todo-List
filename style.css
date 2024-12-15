@@ -67,7 +67,8 @@ body {
                 .homeContactsButton,
                 .homeWhiteboardButton,
                 .myAccountButton,
-                .calendarBackButton {
+                .calendarBackButton,
+                .contactsBackButton {
                   width: 14vw;
                   height: 5vh;
                   background: none;
@@ -119,7 +120,8 @@ body {
       background-color: rgb(255, 255, 255);
     }
 
-    .calendarContainer {
+    .calendarContainer,
+    .contactsContainer {
       border: solid orange 3px;
       display: block;
       margin-left: 1vw;
@@ -133,7 +135,14 @@ body {
     .calendarSubContainer {
       border: solid black 2px;
       width: 80%;
-      height: 62vh;
+      height: 90%;
+      justify-self: center;
+    }
+
+    .contacsSubContainer {
+      
+      width: 90%;
+      height: 90%;
       justify-self: center;
     }
 
