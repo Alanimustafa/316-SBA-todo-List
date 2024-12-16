@@ -865,8 +865,8 @@ function joinAmeetingFunction () {
             // Schedule a Meeting | Form Container | 1- Form Name 
             const scheduleFormName = document.createElement('div');
             scheduleFormName.setAttribute('class', 'scheduleFormName');
-            scheduleFormName.textContent = "Start a Zoom meeting";
-            scheduleFormName.style.color = "rgb(59, 121, 255)";
+            scheduleFormName.textContent = "Join a Zoom meeting";
+            scheduleFormName.style.color = "darkred";
             scheduleFormContainer.appendChild(scheduleFormName);
                   
 
