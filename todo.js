@@ -39,7 +39,10 @@ todoBody.setAttribute('class','todoBody');
                     homeButton.textContent= "Home";
                     homeButtonsTopLeft.appendChild(homeButton);
                     homeButton.addEventListener("click", () => {
-                      mainHomeButton ();
+                      setTimeout (()=> {
+                        mainHomeButton ();
+                      },50)
+                      
                     });
                     
 
@@ -1527,6 +1530,10 @@ function scheduleAmeeting () {
                           quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
                           quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
                           quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
+                          quickNotesMeetingREscheduleButton.addEventListener("click", () => {
+                            mainHomeButton();
+                            scheduleAmeeting ();  
+                          })
                           
                           
                           
