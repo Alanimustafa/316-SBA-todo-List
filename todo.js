@@ -38,6 +38,10 @@ todoBody.setAttribute('class','todoBody');
                     homeButton.classList.add('allButtonsHover');
                     homeButton.textContent= "Home";
                     homeButtonsTopLeft.appendChild(homeButton);
+                    homeButton.addEventListener("click", () => {
+                      mainHomeButton ();
+                    });
+                    
 
                     // Todo Operation | Buttons | 2 | Calendar |Width: 80% - Height: 90%
                     const homeCalendarButton = document.createElement ('button');
@@ -71,6 +75,7 @@ todoBody.setAttribute('class','todoBody');
                     // Adding the Event Listener Click to the Whiteboard Button |
                       homeWhiteboardButton.addEventListener("click", () => {
                         whiteBoardFunction();
+                        
                       });
                     
 
@@ -167,6 +172,9 @@ todoBody.setAttribute('class','todoBody');
                     startMeetingButton.classList.add('allButtonsHover');
                     startMeetingButton.textContent= "Start a meeting";
                     meetingSchedule.appendChild(startMeetingButton);
+                    startMeetingButton.addEventListener("click" , () => {
+                      startAmeetingFunction ();
+                    })
 
                     // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | CENTER: Join A Meeting
                     const joinMeetingButton = document.createElement ('button');
@@ -174,6 +182,10 @@ todoBody.setAttribute('class','todoBody');
                     joinMeetingButton.classList.add('allButtonsHover');
                     joinMeetingButton.textContent= "Join a meeting";
                     meetingSchedule.appendChild(joinMeetingButton);
+                    joinMeetingButton.addEventListener("click", () => {
+                      joinAmeetingFunction ();
+                    })
+                    
 
 
                     // Todo Operation | Container 1 | RIGHT | Greeting and Scheduel | Schedule | BOTTOM: Schedule A Meeting
@@ -292,6 +304,9 @@ todoBody.setAttribute('class','todoBody');
 // ------------------------------ ALL FUNCTIONS ---------------------------------------------
 
 // HOME BUTTON FUNCTION
+function mainHomeButton () {
+  location.reload();
+}
 
 // CALENDAR FUNCTION
 
@@ -342,9 +357,6 @@ function theCalendarFunction () {
 
  };
 
-
-
-
 // WHITEBOARD FUNCTION
 function whiteBoardFunction () {
 
@@ -390,8 +402,8 @@ function whiteBoardFunction () {
 
             // The Click Event Listener to Go Back To The Home Page
             myAccountButton.addEventListener("click", () => {
-              myAccountSubContainer.replaceWith(todoMainRight);
-            })
+              mainHomeButton ();
+            });
 
         // Adding the Login Container to My account Empty Container
         const myAccountLogin = document.querySelector('.myAccountLogin');
@@ -431,8 +443,8 @@ function whiteBoardFunction () {
           userNameForm.required = true ;
           myAccountLogin.appendChild(userNameForm);
             // Username form Activation
-            userNameForm.addEventListener("change", () => {
-              const userNameFormValue = userNameForm.value;
+            userNameForm.addEventListener("change", (event) => {
+              const userNameFormValue = event.target.value;
               console.log(userNameFormValue);
               if (!userNameFormValue) {
                 alert ("Username can not be empty");
@@ -473,16 +485,14 @@ function whiteBoardFunction () {
           myAccountLogin.appendChild(passwordForm);
             // Activate the Password Field
             passwordForm.addEventListener("submit", (event) => {
-              const passwordFormValue = passwordForm.value;
+              const passwordFormValue = event.target.value;
               passwordFormValue.required = true;
               console.log(passwordFormValue);
               if (!passwordFormValue) {
                 prompt ("Invalid Password. Please enter your password and press OK. ");
               } else {
-                console.log("Password is :", passwordFormValue);
-                
               }
-              return passwordFormValue;
+
             })
 
 
@@ -534,8 +544,594 @@ function whiteBoardFunction () {
       }
 
 // START A MEETING FUNCTION
+function startAmeetingFunction () {
+
+  // Schedule a meeting Container
+  const meetingScheduleEmpty = document.createElement('div');
+  meetingScheduleEmpty.setAttribute('class', 'meetingScheduleEmpty');
+  meetingSchedule.replaceWith(meetingScheduleEmpty);
+
+      // Schedule a Meeting | Back Button
+      const scheduleMeetingHomButton = document.createElement ('button');
+      scheduleMeetingHomButton.setAttribute('class', 'scheduleMeetingHomButton');
+      scheduleMeetingHomButton.textContent= "< Back";
+      meetingScheduleEmpty.appendChild(scheduleMeetingHomButton);
+
+          // The Click Event Listener to Go Back To The Home Page
+          scheduleMeetingHomButton.addEventListener("click", () => {
+            meetingScheduleEmpty.replaceWith(meetingSchedule);
+          })
+
+      // Schedule a Meeting | Form Container | Has (2) Containers | 1- Form Name | 2- Form Fields
+      const scheduleFormContainer = document.createElement('div');
+      scheduleFormContainer.setAttribute('class', 'scheduleFormContainer');
+      meetingScheduleEmpty.appendChild(scheduleFormContainer);
+
+            // Schedule a Meeting | Form Container | 1- Form Name 
+            const scheduleFormName = document.createElement('div');
+            scheduleFormName.setAttribute('class', 'scheduleFormName');
+            scheduleFormName.textContent = "Start a Zoom meeting";
+            scheduleFormName.style.color = "rgb(59, 121, 255)";
+            scheduleFormContainer.appendChild(scheduleFormName);
+                  
+
+            // Schedule a Meeting | Form Container | 2- Form Fields
+            const scheduleFormField = document.createElement('div');
+            scheduleFormField.setAttribute('class', 'scheduleFormField');
+            scheduleFormContainer.appendChild(scheduleFormField);
+
+                  // Schedule a Meeting | Form Container | Form Fields | Fields Names
+                  const scheduleFormFieldtheTitles = document.createElement('div');
+                  scheduleFormFieldtheTitles.setAttribute('class', 'scheduleFormFieldtheTitles');
+                  scheduleFormField.appendChild(scheduleFormFieldtheTitles);
+
+                      
+                      // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Name
+                      const scheduleFormFieldtheName = document.createElement('div');
+                      scheduleFormFieldtheName.setAttribute('class', 'scheduleFormFieldtheName');
+                      scheduleFormFieldtheName.classList.add('formsTitles');
+                      scheduleFormFieldtheName.textContent = "Name :";
+                      scheduleFormFieldtheName.style.marginTop = "60%";
+                      scheduleFormFieldtheTitles.appendChild(scheduleFormFieldtheName);
+
+                      
+                      // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Email
+                      const scheduleFormFieldEmail = document.createElement('div');
+                      scheduleFormFieldEmail.setAttribute('class', 'scheduleFormFieldEmail');
+                      scheduleFormFieldEmail.classList.add('formsTitles');
+                      scheduleFormFieldEmail.textContent = "Zoom Link :";
+                      scheduleFormFieldtheTitles.appendChild(scheduleFormFieldEmail);
+
+
+
+                  // Schedule a Meeting | Form Container | Form Fields | Has (7) forms
+                  const scheduleFormFieldtForms = document.createElement('div');
+                  scheduleFormFieldtForms.setAttribute('class', 'scheduleFormFieldtForms');
+                  scheduleFormField.appendChild(scheduleFormFieldtForms);
+                        
+
+                      
+                      // Form Fields | Meet with Person Name
+                      const meetingFormPersonName = document.createElement('input');
+                      meetingFormPersonName.setAttribute('class', 'meetingFormPersonName');
+                      meetingFormPersonName.setAttribute("type", "text");
+                      meetingFormPersonName.setAttribute("placeholder", "Person Name");
+                      meetingFormPersonName.style.marginTop = "35%";
+                      scheduleFormFieldtForms.appendChild(meetingFormPersonName);
+
+                      meetingFormPersonName.addEventListener("change", (event) => {
+                        const meetingPersonNameValue = event.target.value;
+                        console.log("Person Name:", meetingPersonNameValue);
+                        return meetingPersonNameValue;
+                      });
+
+
+                      // Form Fields | Person ZoomLink
+                      const meetingFormPersonZoomLink = document.createElement('input');
+                      meetingFormPersonZoomLink.setAttribute('class', 'meetingFormPersonZoomLink');
+                      meetingFormPersonZoomLink.setAttribute("type", "eamil");
+                      meetingFormPersonZoomLink.setAttribute("placeholder", "ZoomLink");
+                      meetingFormPersonZoomLink.style.width = "98%";
+                      scheduleFormFieldtForms.appendChild(meetingFormPersonZoomLink);
+
+                      // 
+                      meetingFormPersonZoomLink.addEventListener("change", (event) => {
+                        event.preventDefault();
+                        const meetingFormPersonZoomLink = event.target.value;
+
+                            if (meetingFormPersonZoomLink.includes('https://')) {
+                              const meetingFormPersonZoomLink = event.target.value;
+                              return meetingFormPersonZoomLink;
+                            } else {
+                              alert("invalid ZoomLink Address");
+                            }
+                      });
+
+                      // Form Fields | Confirm Button
+                      const scheduleMeetingSubmitButton = document.createElement ('button');
+                      scheduleMeetingSubmitButton.setAttribute('class', 'scheduleMeetingSubmitButton');
+                      scheduleMeetingSubmitButton.textContent= "Submit";
+                      scheduleMeetingSubmitButton.classList.add('allButtonsHover');
+                      scheduleMeetingSubmitButton.style.marginLeft = "70%";
+                      scheduleFormFieldtForms.appendChild(scheduleMeetingSubmitButton);
+                      
+                      // Form Fields | Confirm Button | Activation
+                      scheduleMeetingSubmitButton.addEventListener('click', (event) => {
+                        
+                        // Table Row
+                        const upcomingMeetingTableRow = document.createElement('tr');
+                        upcomingMeetingTableRow.setAttribute('class', "upcomingMeetingTableRow");
+                        todoListTableCells.append(upcomingMeetingTableRow)
+
+                        // Table Cell 1
+                        const upcomingMeetingTableRowCell1 = document.createElement('td');
+                        upcomingMeetingTableRowCell1.setAttribute('class', "upcomingMeetingTableRowCell1");
+                        upcomingMeetingTableRow.append(upcomingMeetingTableRowCell1);
+
+                        // Table Cell 2
+                        const upcomingMeetingTableRowCell2 = document.createElement('td');
+                        upcomingMeetingTableRowCell2.setAttribute('class', "upcomingMeetingTableRowCell2");
+                        upcomingMeetingTableRow.append(upcomingMeetingTableRowCell2);
+
+                        // Submiting the Meeting to the table.
+                        const upcomingMeeting = document.createElement('li');
+                        upcomingMeeting.setAttribute('class', "upcomingMeeting");
+                        upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${meetingFormPersonName.value}.`;
+                        
+                        upcomingMeetingTableRowCell1.appendChild(upcomingMeeting);
+
+                        // Meeting Details Button
+                        const meetingDetails = document.createElement ('button');
+                        meetingDetails.setAttribute('class', 'meetingDetails');
+                        meetingDetails.textContent= "Details";
+                        meetingDetails.classList.add('allButtonsHover');
+                        upcomingMeetingTableRowCell2.append(meetingDetails);
+                        
+                        // Meeting Details Button Function
+                        meetingDetails.addEventListener('click', (event) => {
+
+                          // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+
+
+                    // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+                    const quickNotesTableContainer = document.createElement('div');
+                    quickNotesTableContainer.setAttribute('class', 'quickNotesTableContainer');
+                    agendaContents.replaceWith(quickNotesTableContainer);
+
+                    
+
+                        // Quick Notes Table
+                        const quickNotesTable = document.createElement('table');
+                        quickNotesTable.setAttribute('class', "quickNotesTable");
+                        // quickNotesTable.textContent = "I'm here";
+                        quickNotesTableContainer.append(quickNotesTable);
+
+
+
+                          // Quick Notes Table | Row 1
+                          const quickNotesTableRow1 = document.createElement('tr');
+                          quickNotesTableRow1.setAttribute('class', "quickNotesTableRow1");
+                          quickNotesTable.append(quickNotesTableRow1);
+
+                              // Quick Notes Table | Row 1 | Cell 1
+                              const quickNotesTableRow1Cell1 = document.createElement('td');
+                              quickNotesTableRow1Cell1.setAttribute('class', "quickNotesTableRow1Cell1");
+                              quickNotesTableRow1Cell1.textContent = "Name"
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell1);
+                      
+                              
+                              // Quick Notes Table | Row 1 | Cell 2
+                              const quickNotesTableRow1Cell2 = document.createElement('td');
+                              quickNotesTableRow1Cell2.setAttribute('class', "quickNotesTableRow1Cell2");
+                              quickNotesTableRow1Cell2.textContent = meetingFormPersonName.value;
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell2);
+
+                              // Quick Notes Table | Row 1 | Cell 3
+                              const quickNotesTableRow1Cell3 = document.createElement('td');
+                              quickNotesTableRow1Cell3.setAttribute('class', "quickNotesTableRow1Cell3");
+                              quickNotesTableRow1Cell3.textContent = "Subject"
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell3);
+
+                              // Quick Notes Table | Row 1 | Cell 4
+                              const quickNotesTableRow1Cell4 = document.createElement('td');
+                              quickNotesTableRow1Cell4.setAttribute('class', "quickNotesTableRow1Cell4");
+                              quickNotesTableRow1Cell4.textContent= meetingFormMeetingSubject.value;
+                              //  = meetingSubject;
+                              
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell4);
+
+
+
+                          // Quick Notes Table | Row 2
+                          const quickNotesTableRow2 = document.createElement('tr');
+                          quickNotesTableRow2.setAttribute('class', "quickNotesTableRow2");
+                          quickNotesTable.append(quickNotesTableRow2);
+
+                              // Quick Notes Table | Row 2 | Cell 1
+                              const quickNotesTableRow2Cell1 = document.createElement('td');
+                              quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
+                              quickNotesTableRow2Cell1.textContent ="Date"
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell1);
+// ---------------- Date -----------
+                              // Quick Notes Table | Row 2 | Cell 2
+                              const quickNotesTableRow2Cell2 = document.createElement('td');
+                              quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
+                              quickNotesTableRow2Cell2.textContent = meetingFormDate.value ;
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell2);
+
+                              // Quick Notes Table | Row 2 | Cell 3
+                              const quickNotesTableRow2Cell3 = document.createElement('td');
+                              quickNotesTableRow2Cell3.setAttribute('class', "quickNotesTableRow2Cell3");
+                              quickNotesTableRow2Cell3.textContent = "Time";
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell3);
+
+                              // Quick Notes Table | Row 2 | Cell 4
+                              const quickNotesTableRow2Cell4 = document.createElement('td');
+                              quickNotesTableRow2Cell4.setAttribute('class', "quickNotesTableRow2Cell4");
+                              quickNotesTableRow2Cell4.textContent = meetingFormTime.value;
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell4);
+
+
+
+                          // Quick Notes Table | Row 3
+                          const quickNotesTableRow3 = document.createElement('tr');
+                          quickNotesTableRow3.setAttribute('class', "quickNotesTableRow3");
+                          quickNotesTable.append(quickNotesTableRow3);
+
+                              // Quick Notes Table | Row 3 | Cell 1
+                              const quickNotesTableRow3Cell1 = document.createElement('td');
+                              quickNotesTableRow3Cell1.setAttribute('class', "quickNotesTableRow3Cell1");
+                              quickNotesTableRow3Cell1.textContent ="Phone"
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell1);
+
+                              // Quick Notes Table | Row 3 | Cell 2
+                              const quickNotesTableRow3Cell2 = document.createElement('td');
+                              quickNotesTableRow3Cell2.setAttribute('class', "quickNotesTableRow3Cell2");
+                              quickNotesTableRow3Cell2.textContent = meetingFormPersonPhone.value;
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell2);
+
+                              // Quick Notes Table | Row 3 | Cell 3
+                              const quickNotesTableRow3Cell3 = document.createElement('td');
+                              quickNotesTableRow3Cell3.setAttribute('class', "quickNotesTableRow3Cell3");
+                              quickNotesTableRow3Cell3.textContent= "Email";
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell3);
+
+                              // Quick Notes Table | Row 3 | Cell 4
+                              const quickNotesTableRow3Cell4 = document.createElement('td');
+                              quickNotesTableRow3Cell4.setAttribute('class', "quickNotesTableRow3Cell4");
+                              quickNotesTableRow3Cell4.textContent = meetingFormPersonEmail.value ;
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell4);
+
+
+
+                    // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule | 2- Cancel
+                    const quickNotesOPButtons = document.createElement('div');
+                    quickNotesOPButtons.setAttribute('class', 'quickNotesOPButtons');
+                    quickNotesTableContainer.appendChild(quickNotesOPButtons);
+
+
+                        // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule
+                        const quickNotesMeetingREscheduleButton = document.createElement ('button');
+                        quickNotesMeetingREscheduleButton.setAttribute('class', 'quickNotesMeetingREscheduleButton');
+                        quickNotesMeetingREscheduleButton.textContent= "Reschedule";
+                        quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
+                        quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
+                        quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
+                        
+                        
+                        
+                        // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 2- Cancel
+                        const quickNotesMeetingCancelButton = document.createElement ('button');
+                        quickNotesMeetingCancelButton.setAttribute('class', 'quickNotesMeetingCancelButton');
+                        quickNotesMeetingCancelButton.textContent= "Cancel";
+                        quickNotesMeetingCancelButton.classList.add('allButtonsHover');
+                        quickNotesMeetingCancelButton.style.color = "darkred";
+                        quickNotesMeetingCancelButton.style.marginLeft = "30%";
+                        quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
+                        quickNotesMeetingCancelButton.addEventListener ("click", () => {
+                          mainHomeButton ();
+                        });
+                        
+
+                        })
+
+                      })
+}
 
 // JOIN A MEETING FUNCTION
+function joinAmeetingFunction () {
+
+  // Schedule a meeting Container
+  const meetingScheduleEmpty = document.createElement('div');
+  meetingScheduleEmpty.setAttribute('class', 'meetingScheduleEmpty');
+  meetingSchedule.replaceWith(meetingScheduleEmpty);
+
+      // Schedule a Meeting | Back Button
+      const scheduleMeetingHomButton = document.createElement ('button');
+      scheduleMeetingHomButton.setAttribute('class', 'scheduleMeetingHomButton');
+      scheduleMeetingHomButton.textContent= "< Back";
+      meetingScheduleEmpty.appendChild(scheduleMeetingHomButton);
+
+          // The Click Event Listener to Go Back To The Home Page
+          scheduleMeetingHomButton.addEventListener("click", () => {
+            meetingScheduleEmpty.replaceWith(meetingSchedule);
+          })
+
+      // Schedule a Meeting | Form Container | Has (2) Containers | 1- Form Name | 2- Form Fields
+      const scheduleFormContainer = document.createElement('div');
+      scheduleFormContainer.setAttribute('class', 'scheduleFormContainer');
+      meetingScheduleEmpty.appendChild(scheduleFormContainer);
+
+            // Schedule a Meeting | Form Container | 1- Form Name 
+            const scheduleFormName = document.createElement('div');
+            scheduleFormName.setAttribute('class', 'scheduleFormName');
+            scheduleFormName.textContent = "Start a Zoom meeting";
+            scheduleFormName.style.color = "rgb(59, 121, 255)";
+            scheduleFormContainer.appendChild(scheduleFormName);
+                  
+
+            // Schedule a Meeting | Form Container | 2- Form Fields
+            const scheduleFormField = document.createElement('div');
+            scheduleFormField.setAttribute('class', 'scheduleFormField');
+            scheduleFormContainer.appendChild(scheduleFormField);
+
+                  // Schedule a Meeting | Form Container | Form Fields | Fields Names
+                  const scheduleFormFieldtheTitles = document.createElement('div');
+                  scheduleFormFieldtheTitles.setAttribute('class', 'scheduleFormFieldtheTitles');
+                  scheduleFormField.appendChild(scheduleFormFieldtheTitles);
+
+                      
+                      // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Name
+                      const scheduleFormFieldtheName = document.createElement('div');
+                      scheduleFormFieldtheName.setAttribute('class', 'scheduleFormFieldtheName');
+                      scheduleFormFieldtheName.classList.add('formsTitles');
+                      scheduleFormFieldtheName.textContent = "Name :";
+                      scheduleFormFieldtheName.style.marginTop = "60%";
+                      scheduleFormFieldtheTitles.appendChild(scheduleFormFieldtheName);
+
+                      
+                      // Schedule a Meeting | Form Container | Form Fields | Fields Names | Person Phone Email
+                      const scheduleFormFieldEmail = document.createElement('div');
+                      scheduleFormFieldEmail.setAttribute('class', 'scheduleFormFieldEmail');
+                      scheduleFormFieldEmail.classList.add('formsTitles');
+                      scheduleFormFieldEmail.textContent = "Zoom Link :";
+                      scheduleFormFieldtheTitles.appendChild(scheduleFormFieldEmail);
+
+
+
+                  // Schedule a Meeting | Form Container | Form Fields | Has (7) forms
+                  const scheduleFormFieldtForms = document.createElement('div');
+                  scheduleFormFieldtForms.setAttribute('class', 'scheduleFormFieldtForms');
+                  scheduleFormField.appendChild(scheduleFormFieldtForms);
+                        
+
+                      
+                      // Form Fields | Meet with Person Name
+                      const meetingFormPersonName = document.createElement('input');
+                      meetingFormPersonName.setAttribute('class', 'meetingFormPersonName');
+                      meetingFormPersonName.setAttribute("type", "text");
+                      meetingFormPersonName.setAttribute("placeholder", "Person Name");
+                      meetingFormPersonName.style.marginTop = "35%";
+                      scheduleFormFieldtForms.appendChild(meetingFormPersonName);
+
+                      meetingFormPersonName.addEventListener("change", (event) => {
+                        const meetingPersonNameValue = event.target.value;
+                        console.log("Person Name:", meetingPersonNameValue);
+                        return meetingPersonNameValue;
+                      });
+
+
+                      // Form Fields | Person ZoomLink
+                      const meetingFormPersonZoomLink = document.createElement('input');
+                      meetingFormPersonZoomLink.setAttribute('class', 'meetingFormPersonZoomLink');
+                      meetingFormPersonZoomLink.setAttribute("type", "eamil");
+                      meetingFormPersonZoomLink.setAttribute("placeholder", "ZoomLink");
+                      meetingFormPersonZoomLink.style.width = "98%";
+                      scheduleFormFieldtForms.appendChild(meetingFormPersonZoomLink);
+
+                      // 
+                      meetingFormPersonZoomLink.addEventListener("change", (event) => {
+                        event.preventDefault();
+                        const meetingFormPersonZoomLink = event.target.value;
+
+                            if (meetingFormPersonZoomLink.includes('https://')) {
+                              const meetingFormPersonZoomLink = event.target.value;
+                              return meetingFormPersonZoomLink;
+                            } else {
+                              alert("invalid ZoomLink Address");
+                            }
+                      });
+
+                      // Form Fields | Confirm Button
+                      const scheduleMeetingSubmitButton = document.createElement ('button');
+                      scheduleMeetingSubmitButton.setAttribute('class', 'scheduleMeetingSubmitButton');
+                      scheduleMeetingSubmitButton.textContent= "Submit";
+                      scheduleMeetingSubmitButton.classList.add('allButtonsHover');
+                      scheduleMeetingSubmitButton.style.marginLeft = "70%";
+                      scheduleFormFieldtForms.appendChild(scheduleMeetingSubmitButton);
+                      
+                      // Form Fields | Confirm Button | Activation
+                      scheduleMeetingSubmitButton.addEventListener('click', (event) => {
+                        
+                        // Table Row
+                        const upcomingMeetingTableRow = document.createElement('tr');
+                        upcomingMeetingTableRow.setAttribute('class', "upcomingMeetingTableRow");
+                        todoListTableCells.append(upcomingMeetingTableRow)
+
+                        // Table Cell 1
+                        const upcomingMeetingTableRowCell1 = document.createElement('td');
+                        upcomingMeetingTableRowCell1.setAttribute('class', "upcomingMeetingTableRowCell1");
+                        upcomingMeetingTableRow.append(upcomingMeetingTableRowCell1);
+
+                        // Table Cell 2
+                        const upcomingMeetingTableRowCell2 = document.createElement('td');
+                        upcomingMeetingTableRowCell2.setAttribute('class', "upcomingMeetingTableRowCell2");
+                        upcomingMeetingTableRow.append(upcomingMeetingTableRowCell2);
+
+                        // Submiting the Meeting to the table.
+                        const upcomingMeeting = document.createElement('li');
+                        upcomingMeeting.setAttribute('class', "upcomingMeeting");
+                        upcomingMeeting.textContent = `${meetingFormDate.value}   at   ${meetingFormTime.value}   with   ${meetingFormPersonName.value}.`;
+                        
+                        upcomingMeetingTableRowCell1.appendChild(upcomingMeeting);
+
+                        // Meeting Details Button
+                        const meetingDetails = document.createElement ('button');
+                        meetingDetails.setAttribute('class', 'meetingDetails');
+                        meetingDetails.textContent= "Details";
+                        meetingDetails.classList.add('allButtonsHover');
+                        upcomingMeetingTableRowCell2.append(meetingDetails);
+                        
+                        // Meeting Details Button Function
+                        meetingDetails.addEventListener('click', (event) => {
+
+                          // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+
+
+                    // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+                    const quickNotesTableContainer = document.createElement('div');
+                    quickNotesTableContainer.setAttribute('class', 'quickNotesTableContainer');
+                    agendaContents.replaceWith(quickNotesTableContainer);
+
+                    
+
+                        // Quick Notes Table
+                        const quickNotesTable = document.createElement('table');
+                        quickNotesTable.setAttribute('class', "quickNotesTable");
+                        // quickNotesTable.textContent = "I'm here";
+                        quickNotesTableContainer.append(quickNotesTable);
+
+
+
+                          // Quick Notes Table | Row 1
+                          const quickNotesTableRow1 = document.createElement('tr');
+                          quickNotesTableRow1.setAttribute('class', "quickNotesTableRow1");
+                          quickNotesTable.append(quickNotesTableRow1);
+
+                              // Quick Notes Table | Row 1 | Cell 1
+                              const quickNotesTableRow1Cell1 = document.createElement('td');
+                              quickNotesTableRow1Cell1.setAttribute('class', "quickNotesTableRow1Cell1");
+                              quickNotesTableRow1Cell1.textContent = "Name"
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell1);
+                      
+                              
+                              // Quick Notes Table | Row 1 | Cell 2
+                              const quickNotesTableRow1Cell2 = document.createElement('td');
+                              quickNotesTableRow1Cell2.setAttribute('class', "quickNotesTableRow1Cell2");
+                              quickNotesTableRow1Cell2.textContent = meetingFormPersonName.value;
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell2);
+
+                              // Quick Notes Table | Row 1 | Cell 3
+                              const quickNotesTableRow1Cell3 = document.createElement('td');
+                              quickNotesTableRow1Cell3.setAttribute('class', "quickNotesTableRow1Cell3");
+                              quickNotesTableRow1Cell3.textContent = "Subject"
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell3);
+
+                              // Quick Notes Table | Row 1 | Cell 4
+                              const quickNotesTableRow1Cell4 = document.createElement('td');
+                              quickNotesTableRow1Cell4.setAttribute('class', "quickNotesTableRow1Cell4");
+                              quickNotesTableRow1Cell4.textContent= meetingFormMeetingSubject.value;
+                              //  = meetingSubject;
+                              
+                              quickNotesTableRow1.append(quickNotesTableRow1Cell4);
+
+
+
+                          // Quick Notes Table | Row 2
+                          const quickNotesTableRow2 = document.createElement('tr');
+                          quickNotesTableRow2.setAttribute('class', "quickNotesTableRow2");
+                          quickNotesTable.append(quickNotesTableRow2);
+
+                              // Quick Notes Table | Row 2 | Cell 1
+                              const quickNotesTableRow2Cell1 = document.createElement('td');
+                              quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
+                              quickNotesTableRow2Cell1.textContent ="Date"
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell1);
+// ---------------- Date -----------
+                              // Quick Notes Table | Row 2 | Cell 2
+                              const quickNotesTableRow2Cell2 = document.createElement('td');
+                              quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
+                              quickNotesTableRow2Cell2.textContent = meetingFormDate.value ;
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell2);
+
+                              // Quick Notes Table | Row 2 | Cell 3
+                              const quickNotesTableRow2Cell3 = document.createElement('td');
+                              quickNotesTableRow2Cell3.setAttribute('class', "quickNotesTableRow2Cell3");
+                              quickNotesTableRow2Cell3.textContent = "Time";
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell3);
+
+                              // Quick Notes Table | Row 2 | Cell 4
+                              const quickNotesTableRow2Cell4 = document.createElement('td');
+                              quickNotesTableRow2Cell4.setAttribute('class', "quickNotesTableRow2Cell4");
+                              quickNotesTableRow2Cell4.textContent = meetingFormTime.value;
+                              quickNotesTableRow2.append(quickNotesTableRow2Cell4);
+
+
+
+                          // Quick Notes Table | Row 3
+                          const quickNotesTableRow3 = document.createElement('tr');
+                          quickNotesTableRow3.setAttribute('class', "quickNotesTableRow3");
+                          quickNotesTable.append(quickNotesTableRow3);
+
+                              // Quick Notes Table | Row 3 | Cell 1
+                              const quickNotesTableRow3Cell1 = document.createElement('td');
+                              quickNotesTableRow3Cell1.setAttribute('class', "quickNotesTableRow3Cell1");
+                              quickNotesTableRow3Cell1.textContent ="Phone"
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell1);
+
+                              // Quick Notes Table | Row 3 | Cell 2
+                              const quickNotesTableRow3Cell2 = document.createElement('td');
+                              quickNotesTableRow3Cell2.setAttribute('class', "quickNotesTableRow3Cell2");
+                              quickNotesTableRow3Cell2.textContent = meetingFormPersonPhone.value;
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell2);
+
+                              // Quick Notes Table | Row 3 | Cell 3
+                              const quickNotesTableRow3Cell3 = document.createElement('td');
+                              quickNotesTableRow3Cell3.setAttribute('class', "quickNotesTableRow3Cell3");
+                              quickNotesTableRow3Cell3.textContent= "Email";
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell3);
+
+                              // Quick Notes Table | Row 3 | Cell 4
+                              const quickNotesTableRow3Cell4 = document.createElement('td');
+                              quickNotesTableRow3Cell4.setAttribute('class', "quickNotesTableRow3Cell4");
+                              quickNotesTableRow3Cell4.textContent = meetingFormPersonEmail.value ;
+                              quickNotesTableRow3.append(quickNotesTableRow3Cell4);
+
+
+
+                    // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule | 2- Cancel
+                    const quickNotesOPButtons = document.createElement('div');
+                    quickNotesOPButtons.setAttribute('class', 'quickNotesOPButtons');
+                    quickNotesTableContainer.appendChild(quickNotesOPButtons);
+
+
+                        // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 1- Reschedule
+                        const quickNotesMeetingREscheduleButton = document.createElement ('button');
+                        quickNotesMeetingREscheduleButton.setAttribute('class', 'quickNotesMeetingREscheduleButton');
+                        quickNotesMeetingREscheduleButton.textContent= "Reschedule";
+                        quickNotesMeetingREscheduleButton.classList.add('allButtonsHover');
+                        quickNotesMeetingREscheduleButton.style.marginLeft = "20%";
+                        quickNotesOPButtons.appendChild(quickNotesMeetingREscheduleButton);
+                        
+                        
+                        
+                        // Quick Notes Meeting Details Container | Buttons | Has (2) buttons | 2- Cancel
+                        const quickNotesMeetingCancelButton = document.createElement ('button');
+                        quickNotesMeetingCancelButton.setAttribute('class', 'quickNotesMeetingCancelButton');
+                        quickNotesMeetingCancelButton.textContent= "Cancel";
+                        quickNotesMeetingCancelButton.classList.add('allButtonsHover');
+                        quickNotesMeetingCancelButton.style.color = "darkred";
+                        quickNotesMeetingCancelButton.style.marginLeft = "30%";
+                        quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
+                        quickNotesMeetingCancelButton.addEventListener ("click", () => {
+                          mainHomeButton ();
+                        });
+                        
+
+                        })
+
+                      })
+}
 
 // SCHEDULE A MEETING FUNCTION
 function scheduleAmeeting () {
@@ -942,6 +1538,10 @@ function scheduleAmeeting () {
                           quickNotesMeetingCancelButton.style.color = "darkred";
                           quickNotesMeetingCancelButton.style.marginLeft = "30%";
                           quickNotesOPButtons.appendChild(quickNotesMeetingCancelButton);
+                          quickNotesMeetingCancelButton.addEventListener ("click", () => {
+                            mainHomeButton ();
+                          });
+                          
 
                           })
 

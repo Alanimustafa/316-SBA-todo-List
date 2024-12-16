@@ -394,7 +394,8 @@ body {
 .meetingFormPersonEmail,
 .meetingFormMeetingSubject,
 .meetingFormTextReminder,
-.reminderLabel {
+.reminderLabel,
+.meetingFormPersonZoomLink {
   color: rgb(0, 132, 255);
   border-color: rgb(0, 132, 255);
   font-size: 15px;
