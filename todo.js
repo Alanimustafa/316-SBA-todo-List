@@ -103,7 +103,6 @@ todoBody.setAttribute('class','todoBody');
             
 
 
-
           // DONE -Todo Main Operation | RIGHT | Width: 75% - Height: 100% | Has (2) Sub Containers | TOP: Greetings and Schedule | BOTTOM: Calendar and Invitations
           const todoMainRight = document.createElement('div');
           todoMainRight.setAttribute('class', "todoMainRight");
@@ -1293,8 +1292,6 @@ function scheduleAmeeting () {
                       );
 
                         
-
-
                         // Form Fields | Person Email
                         const meetingFormPersonEmail = document.createElement('input');
                         meetingFormPersonEmail.setAttribute('class', 'meetingFormPersonEmail');
@@ -1316,7 +1313,7 @@ function scheduleAmeeting () {
                               }
                         });
 
-// ------------------ I'm here--------------
+
                         // Form Fields | Meeting Subject
                         const meetingFormMeetingSubject = document.createElement('input');
                         meetingFormMeetingSubject.setAttribute('class', 'meetingFormMeetingSubject');
@@ -1403,7 +1400,7 @@ function scheduleAmeeting () {
                           // Meeting Details Button Function
                           meetingDetails.addEventListener('click', (event) => {
 
-                            // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
+                // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
 
 
                       // Quick Notes Meeting Details Container | Has (2) Containers | TOP: Meeting Details Table | BOTTOM: operational Buttons
@@ -1465,7 +1462,7 @@ function scheduleAmeeting () {
                                 quickNotesTableRow2Cell1.setAttribute('class', "quickNotesTableRow2Cell1");
                                 quickNotesTableRow2Cell1.textContent ="Date"
                                 quickNotesTableRow2.append(quickNotesTableRow2Cell1);
-// ---------------- Date -----------
+
                                 // Quick Notes Table | Row 2 | Cell 2
                                 const quickNotesTableRow2Cell2 = document.createElement('td');
                                 quickNotesTableRow2Cell2.setAttribute('class', "quickNotesTableRow2Cell2");
@@ -1548,23 +1545,7 @@ function scheduleAmeeting () {
                           quickNotesMeetingCancelButton.addEventListener ("click", () => {
                             mainHomeButton ();
                           });
-                          
-
                           })
-
                         })
 }
 
-function postMeetingDetails (meetingFormPersonName) {
-
-  
-
-
-
-
-}
-
-
-// CALENDAR PREVIOUS BUTTON MEETING
-
-// CALENDAR NEXT BUTTON MEETING

@@ -54,7 +54,6 @@ body {
 
           .homeButtonsTopLeft {
             display: block;
-            /* border: solid red 2px; */
             width: 92% ;
             height: 80%;
             padding: 10px;
@@ -90,7 +89,6 @@ body {
 
           .myAccountContainer {
             display: block;
-            /* border: solid red 2px; */
             width: 100% ;
             height: 10%;
             padding: 10px;
@@ -162,7 +160,6 @@ body {
 
                     .greetingContainer {
                       display: block;
-                      /* border: solid red 1px; */
                       height: 45%;
                       width: 100%;
                     }
@@ -187,7 +184,6 @@ body {
                         }
 
                     .todayAgenda {
-                      /* border: solid red 1px; */
                       height: 51%;
                       width: 94%;;
                       margin-top: 4px;
@@ -264,7 +260,6 @@ body {
 
                   .calPrevNexContainer {
                     display: flex;
-                    /* border: solid green 2px; */
                     width: 100%;
                     height: 10%;
                     justify-content: space-between;
@@ -436,7 +431,6 @@ body {
 
 
 .todoListTableCells {
-  /* border: solid black 1px; */
   width: 98%;
   height: auto;
   justify-self: center;
@@ -444,7 +438,6 @@ body {
 }
 
 .upcomingMeetingTableRow{
-  /* border: solid red 1px; */
   width: 98%;
   height: 30px;
   justify-self: center;
@@ -452,12 +445,10 @@ body {
 }
 
 .upcomingMeetingTableRowCell1 {
-  /* border: solid red 1px;  */
   width: 20vw;
 }
 
 .upcomingMeetingTableRowCell2 {
-  /* border: solid greenyellow 1px; */
   width: 5vw;
   margin-right: none;
 }
@@ -531,10 +522,4 @@ height: 80%;
   height: 30%;
 
 }
-
-
-
-
-/* My account styles */
-
 
